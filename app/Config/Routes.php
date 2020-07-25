@@ -30,7 +30,18 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// ADMIN
+// home
 $routes->get('/', 'Home::index');
+
+// pesanan
+$routes->get('/pesanan', 'backend/PesananController::index');
+
+// PRODUK
+$routes->get('/produk', 'backend/ProdukController::index');
+$routes->get('/produk/tambah', 'backend/ProdukController::tambah');
+
 
 /**
  * --------------------------------------------------------------------

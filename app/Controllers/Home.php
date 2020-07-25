@@ -4,9 +4,11 @@ class Home extends BaseController
 {
 	public function index()
 	{
-		return view('welcome_message');
+		$data = [
+			'title' => 'HTSA|Dashboard',
+			'active' => 'home'
+		];
+		return view('backend/pages/home',$data);
 	}
-
-	//--------------------------------------------------------------------
 
 }
