@@ -28,7 +28,8 @@
  <script src="/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
  <script src="/backend/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
  <script src="/backend/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
-
+ <!-- bs-custom-file-input -->
+ <script src="/backend/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
  <script>
      $(function() {
          $('#tbl-produk').DataTable({
@@ -43,6 +44,23 @@
              "responsive": true,
              "autoWidth": false,
          })
+         
+         bsCustomFileInput.init();
+
+         function readURL(input) {
+             if (input.files && input.files[0]) {
+                 var reader = new FileReader();
+                 reader.onload = function(e) {
+                     $('.img-preview').attr('src', e.target.result);
+                 }
+
+                 reader.readAsDataURL(input.files[0]);
+             }
+         }
+
+         $("#gambar").change(function() {
+             readURL(this);
+         });
      })
  </script>
  </body>

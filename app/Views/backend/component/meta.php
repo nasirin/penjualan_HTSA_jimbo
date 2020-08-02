@@ -7,7 +7,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
     <title><?= $title; ?></title>
-    <link rel="shortcut icon" href="img/logo 2.png" type="icon">
+    <link rel="shortcut icon" href="/img/logo 2.png" type="icon">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="/backend/plugins/fontawesome-free/css/all.min.css">

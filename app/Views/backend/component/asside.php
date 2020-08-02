@@ -46,6 +46,14 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="/department" class="nav-link <?= ($active == 'department') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-building"></i>
+                        <p>
+                            Department
+                        </p>
+                    </a>
+                </li>
                 <li class="nav-item has-treeview">
                     <a href="" class="nav-link">
                         <i class="nav-icon fas fa-copy"></i>
