@@ -34,23 +34,31 @@ $routes->setAutoRoute(true);
 
 // ADMIN
 // home
-$routes->get('/', 'Home::index');
+$routes->get('/', 'Home::login');
+$routes->get('/dashboard', 'Home');
+
+// login
+$routes->post('/admin/login','LoginController::login');
+$routes->get('/logout','LoginController::logout');
 
 // pesanan
-$routes->get('/pesanan', 'backend\PesananController::index');
+$routes->get('/pesanan', 'backend\PesananController');
+$routes->get('/pesanan/detail/(:any)', 'backend\PesananController::detail/$1');
+$routes->get('/pesanan/invoice', 'backend\PesananController::show_invoice');
+$routes->get('/pesanan/print', 'backend\PesananController::print');
 
 // PRODUK
-$routes->get('/produk', 'backend\ProdukController::index');
+$routes->get('/produk', 'backend\ProdukController');
 $routes->get('/produk/tambah/', 'backend\ProdukController::tambah');
 $routes->post('/produk/simpan/', 'backend\ProdukController::simpan');
 $routes->add('/produk/ubah/(:segment)', 'backend\ProdukController::ubah/$1');
 $routes->add('/produk/edit/(:segment)', 'backend\ProdukController::edit/$1');
 $routes->add('/produk/hapus/(:any)', 'backend\ProdukController::hapus/$1');
 $routes->add('/produk/edit/(:segment)', 'backend\ProdukController::edit/$1');
-$routes->add('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
+$routes->get('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
 
 // DEPARTMENT
-$routes->get('/department','backend\DepartmentController::index');
+$routes->get('/department','backend\DepartmentController');
 $routes->post('/depart/simpan/', 'backend\DepartmentController::simpan');
 $routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1'); //hapus department
 $routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1'); //gak jalan

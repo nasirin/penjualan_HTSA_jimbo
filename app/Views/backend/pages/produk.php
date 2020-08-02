@@ -54,7 +54,7 @@
                                     <td><?= $data['id_prod']; ?></td>
                                     <td><?= $data['nama_department']; ?></td>
                                     <td><?= $data['nama_produk']; ?></td>
-                                    <td><?= $data['harga_produk']; ?></td>
+                                    <td>Rp.<?= number_format($data['harga_produk'],0,',','.'); ?></td>
                                     <td><?= $data['varian_produk']; ?></td>
                                     <td><?= $data['qty_produk']; ?></td>
                                     <td><?= $data['ukuran_produk']; ?></td>

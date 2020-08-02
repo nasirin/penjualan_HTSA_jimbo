@@ -19,6 +19,10 @@ class Home extends BaseController
 
 	public function index()
 	{
+		if (session()->get('username') == '') {
+			return redirect()->to('/');
+		}
+
 		$data = [
 			'title' => 'HTSA|Dashboard',
 			'active' => 'home'
@@ -26,10 +30,8 @@ class Home extends BaseController
 		return view('backend/pages/home', $data);
 	}
 
-	public function hapus($id)
+	public function login()
 	{
-		$this->mdepartment->delete($id);
-		session()->setFlashdata('success', 'Data berhasil di hapus');
-		return redirect()->to("/produk");
+		return view('login');
 	}
 }

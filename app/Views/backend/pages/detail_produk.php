@@ -33,38 +33,33 @@
                     </div>
                     <div class="col-12 col-sm-6">
                         <h3 class="my-3"><?= ucwords($produk['nama_produk']); ?></h3>
-                        <h6>Deskripsi:</h6>
-                        <p><?= ucwords($produk['keterangan_produk']); ?></p>
-
+                        <!-- <h6>Deskripsi:</h6> -->
+                        <p class="text-justify"><?= ucfirst($produk['keterangan_produk']); ?></p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-6 col-sm-6 col-xs-6">
+                            <div class="col-md-4 col-sm-4 col-4">
                                 <h4>Varian</h4>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-default text-center active">
-                                        <input type="radio" name="color_option" id="color_option1" autocomplete="off" checked="">
-                                        <?= $produk['varian_produk']; ?>
-                                        <br>
-                                        <!-- <i class="fas fa-circle fa-2x text-green"></i> -->
-                                    </label>
+                                    <h5><span class="badge badge-pill badge-info"><?= $produk['varian_produk']; ?></span></h5>
                                 </div>
                             </div>
-                            <div class="col md-6 col-sm-6 col-xs-6">
-                                <h4>Size</h4>
+                            <div class="col-md-4 col-sm-4 col-4">
+                                <h4>Ukuran</h4>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-default text-center">
-                                        <input type="radio" name="color_option" id="color_option1" autocomplete="off">
-                                        <span class="text-xl"><?= $produk['ukuran_produk']; ?></span>
-                                        <br>
-                                        ml
-                                    </label>
+                                    <h5> <span class="badge badge-pill badge-info"><?= $produk['ukuran_produk']; ?> (ml)</span></h5>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-4 col-4">
+                                <h4>Quantity</h4> <!-- kalo habis badge-warning-->
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <h5> <span class="badge badge-pill badge-info"><?= $produk['qty_produk']; ?></span></h5>                                    
                                 </div>
                             </div>
                         </div>
 
-                        <div class="bg-gray py-2 px-3 mt-4">
+                        <div class="bg-info py-2 px-3 mt-4 rounded">
                             <h2 class="mb-0">
-                                Rp.<?= $produk['harga_produk']; ?>
+                                Rp.<?= number_format($produk['harga_produk'], 0, ',', '.'); ?>
                             </h2>
                         </div>
                     </div>

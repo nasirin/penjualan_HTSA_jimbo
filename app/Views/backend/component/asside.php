@@ -13,7 +13,7 @@
                 <img src="/backend/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block"><?= session()->get('username'); ?></a>
             </div>
         </div>
 
@@ -96,7 +96,7 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="/logout" class="nav-link" onclick="return confirm('apakah anda yakin?')">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout
@@ -105,7 +105,5 @@
                 </li>
             </ul>
         </nav>
-        <!-- /.sidebar-menu -->
     </div>
-    <!-- /.sidebar -->
 </aside>
