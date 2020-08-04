@@ -40,4 +40,9 @@ class Produk extends BaseController
 
         return view('frontend/pages/produk_grid', $data);
     }
+
+    public function checkout()
+    {
+        return view('frontend/pages/checkout');
+    }
 }

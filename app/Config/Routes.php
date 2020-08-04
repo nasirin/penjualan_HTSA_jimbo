@@ -76,6 +76,7 @@ $routes->get('/detail','Produk');
 $routes->get('/cart','Produk::cart');
 $routes->get('/konfirmasi','Produk::konfirmasi');
 $routes->get('/produk','Produk::produk');
+$routes->get('/checkout','Produk::checkout');
 
 // profil
 $routes->get('/profil','Profil');

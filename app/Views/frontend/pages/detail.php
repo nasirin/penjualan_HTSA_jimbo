@@ -35,7 +35,7 @@
                             </div>
                         </div>
                     </div>
-                    <a href="#" class="primary-btn">BUY NOW</a>
+                    <a href="/cart" class="primary-btn">BUY NOW</a>
                     <a href="#" class="heart-icon"><span class="fas fa-shopping-cart"></span></a>
                     <ul>
                         <li><b>Availability</b> <span>In Stock</span></li>

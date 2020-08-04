@@ -2,9 +2,9 @@
 <footer class="footer spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-6">
-                <div class="footer__about">
-                    <div class="footer__about__logo">
+            <div class="col-lg-12">
+                <div class="footer__about justify-content-center">
+                    <div class="footer__about__logo ">
                         <a href="frontend/./index.html"><img src="frontend/img/logo.png" alt=""></a>
                     </div>
                     <ul>
@@ -14,7 +14,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-12">
+            <!-- <div class="col-lg-6 col-md-12">
                 <div class="footer__widget">
                     <h6>Join Our Newsletter Now</h6>
                     <p>Get E-mail updates about our latest shop and special offers.</p>
@@ -27,7 +27,7 @@
                         <a href=""><i class="fa fa-instagram"></i></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </footer>

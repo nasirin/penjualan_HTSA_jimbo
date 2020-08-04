@@ -14,12 +14,13 @@
                     </ul>
                 </div>
             </div>
+            <!-- hero banner -->
             <div class="col-lg-9">
-                <div class="hero__item set-bg" data-setbg="frontend/img/hero/banner.jpg">
+                <div class="hero__item set-bg" data-setbg="frontend/img/hero/banner2.jpg">
                     <div class="hero__text">
-                        <span>FRUIT FRESH</span>
-                        <h2>Vegetable <br />100% Organic</h2>
-                        <p>Free Pickup and Delivery Available</p>
+                        <!-- <span>FRUIT FRESH</span> -->
+                        <h2>CV. Anugerah Abadi <br />HTSA</h2>
+                        <p>kami menyediakan berbagai macam kebutuhan <br> kebersihan rumah tangga anda</p>
                         <a href="/detail" class="primary-btn">SHOP NOW</a>
                     </div>
                 </div>
