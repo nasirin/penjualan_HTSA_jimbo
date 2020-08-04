@@ -19,19 +19,9 @@ class Home extends BaseController
 
 	public function index()
 	{
-		if (session()->get('username') == '') {
-			return redirect()->to('/');
-		}
-
 		$data = [
-			'title' => 'HTSA|Dashboard',
-			'active' => 'home'
+			'department' => $this->mdepartment->findAll(),
 		];
-		return view('backend/pages/home', $data);
-	}
-
-	public function login()
-	{
-		return view('login');
+		return view('frontend/pages/home',$data);
 	}
 }

@@ -20,15 +20,21 @@ class DepartmentController extends BaseController
 
     public function index()
     {
-        $data = [
-            'title' => 'HTSA | Department',
-            'active' => 'department',
-            'department' => $this->mdepartment->findAll(),
-            'validasi' => \Config\Services::validation(),
-            'get' => $this->mdepartment->get(),
-        ];
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => 'HTSA | Department',
+                'active' => 'department',
+                'department' => $this->mdepartment->findAll(),
+                'validasi' => \Config\Services::validation(),
+                'get' => $this->mdepartment->get(),
+            ];
 
-        return view('backend/pages/department', $data);
+            return view('backend/pages/department', $data);
+        }
     }
 
     public function simpan()

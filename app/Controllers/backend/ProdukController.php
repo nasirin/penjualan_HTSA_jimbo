@@ -19,40 +19,57 @@ class ProdukController extends BaseController
 
     public function index()
     {
-        $data = [
-            'title' => 'HTSA | Produk',
-            'active' => 'produk',
-            'department' => $this->mdepartment->findAll(),
-            'validasi' => \Config\Services::validation(),
-            'get' => $this->mproduk->get(),
-        ];
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => 'HTSA | Produk',
+                'active' => 'produk',
+                'department' => $this->mdepartment->findAll(),
+                'validasi' => \Config\Services::validation(),
+                'get' => $this->mproduk->get(),
+            ];
 
-        return view('backend/pages/produk', $data);
+            return view('backend/pages/produk', $data);
+        }
     }
 
     public function tambah()
     {
-
-        $data = [
-            'title' => 'HTSA | Produk',
-            'active' => 'produk',
-            'department' => $this->mdepartment->findAll(),
-            'validasi' => \Config\Services::validation(),
-            'kode' => $this->mproduk->kode()
-        ];
-        return view('backend/pages/form-tambah-produk', $data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => 'HTSA | Produk',
+                'active' => 'produk',
+                'department' => $this->mdepartment->findAll(),
+                'validasi' => \Config\Services::validation(),
+                'kode' => $this->mproduk->kode()
+            ];
+            return view('backend/pages/form-tambah-produk', $data);
+        }
     }
 
     public function edit($id)
     {
-        $data = [
-            'title' => 'HTSA | Produk',
-            'active' => 'produk',
-            'department' => $this->mdepartment->findAll(),
-            'produk' => $this->mproduk->get_data($id),
-            'validasi' => \Config\Services::validation(),
-        ];
-        return view('backend/pages/form-ubah-produk', $data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => 'HTSA | Produk',
+                'active' => 'produk',
+                'department' => $this->mdepartment->findAll(),
+                'produk' => $this->mproduk->get_data($id),
+                'validasi' => \Config\Services::validation(),
+            ];
+            return view('backend/pages/form-ubah-produk', $data);
+        }
     }
 
     public function simpan()
@@ -173,12 +190,18 @@ class ProdukController extends BaseController
 
     public function detail($id)
     {
-        $data = [
-            'title' => 'HTSA | Detail produk',
-            'active' => 'produk',
-            'department' => $this->mdepartment->findAll(),
-            'produk' => $this->mproduk->get_data($id),            
-        ];
-        return view('backend/pages/detail_produk',$data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => 'HTSA | Detail produk',
+                'active' => 'produk',
+                'department' => $this->mdepartment->findAll(),
+                'produk' => $this->mproduk->get_data($id),
+            ];
+            return view('backend/pages/detail_produk', $data);
+        }
     }
 }

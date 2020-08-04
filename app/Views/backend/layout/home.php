@@ -7,11 +7,6 @@
     <div class="content-wrapper">
         <?= $this->renderSection('content'); ?>
     </div>
-
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-    </aside>
 </div>
 <!-- ./wrapper -->
 

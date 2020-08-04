@@ -15,40 +15,64 @@ class PesananController extends BaseController
     }
     public function index()
     {
-        $data = [
-            'title' => "HTSA | Pesanan",
-            'active' => "pesanan",
-            'pesanan' => $this->mpesanan->get_all()
-        ];
-        return view('backend/pages/pesanan', $data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => "HTSA | Pesanan",
+                'active' => "pesanan",
+                'pesanan' => $this->mpesanan->get_all()
+            ];
+            return view('backend/pages/pesanan', $data);
+        }
     }
 
     public function detail($id)
     {
-        $data = [
-            'title' => "HTSA | Pesanan",
-            'active' => "pesanan",
-            'pesanan' => $this->mpesanan->detail($id)
-        ];
-        return view('backend/pages/detail_pesanan', $data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => "HTSA | Pesanan",
+                'active' => "pesanan",
+                'pesanan' => $this->mpesanan->detail($id)
+            ];
+            return view('backend/pages/detail_pesanan', $data);
+        }
     }
     public function show_invoice()
     {
-        $data = [
-            'title' => "HTSA | Pesanan",
-            'active' => "pesanan",
-            // 'pesanan' => $this->mpesanan->detail()
-        ];
-        return view('backend/pages/invoice', $data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => "HTSA | Pesanan",
+                'active' => "pesanan",
+                // 'pesanan' => $this->mpesanan->detail()
+            ];
+            return view('backend/pages/invoice', $data);
+        }
     }
 
     public function print()
     {
-        $data = [
-            'title' => "HTSA | Pesanan",
-            'active' => "pesanan",
-            // 'pesanan' => $this->mpesanan->detail()
-        ];
-        return view('backend/pages/invoice_print',$data);
+        if (session()->get('username') == '') {
+            return view('backend/login');
+        } elseif (session()->get('level') != 'admin') {
+            return redirect()->to('/');
+        } else {
+            $data = [
+                'title' => "HTSA | Pesanan",
+                'active' => "pesanan",
+                // 'pesanan' => $this->mpesanan->detail()
+            ];
+            return view('backend/pages/invoice_print', $data);
+        }
     }
 }

@@ -34,12 +34,12 @@ $routes->setAutoRoute(true);
 
 // ADMIN
 // home
-$routes->get('/', 'Home::login');
-$routes->get('/dashboard', 'Home');
+// $routes->get('/admin', 'Home::login');
+$routes->get('/dashboard', 'backend\Home');
 
 // login
-$routes->post('/admin/login','LoginController::login');
-$routes->get('/logout','LoginController::logout');
+$routes->post('/admin/login','backend\LoginController::login');
+$routes->get('/admin/logout','backend\LoginController::logout');
 
 // pesanan
 $routes->get('/pesanan', 'backend\PesananController');
@@ -48,7 +48,7 @@ $routes->get('/pesanan/invoice', 'backend\PesananController::show_invoice');
 $routes->get('/pesanan/print', 'backend\PesananController::print');
 
 // PRODUK
-$routes->get('/produk', 'backend\ProdukController');
+$routes->get('/admin/produk', 'backend\ProdukController');
 $routes->get('/produk/tambah/', 'backend\ProdukController::tambah');
 $routes->post('/produk/simpan/', 'backend\ProdukController::simpan');
 $routes->add('/produk/ubah/(:segment)', 'backend\ProdukController::ubah/$1');
@@ -60,9 +60,25 @@ $routes->get('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
 // DEPARTMENT
 $routes->get('/department','backend\DepartmentController');
 $routes->post('/depart/simpan/', 'backend\DepartmentController::simpan');
-$routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1'); //hapus department
-$routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1'); //gak jalan
+$routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1');
+$routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1');
 
+// FRONT END
+$routes->get('/','Home');
+$routes->get('/login','Auth');
+$routes->post('/masuk','Auth::login');
+$routes->get('/logout','Auth::logout');
+$routes->get('/daftar','Auth::daftar');
+$routes->post('/register','Auth::register');
+
+// produk
+$routes->get('/detail','Produk');
+$routes->get('/cart','Produk::cart');
+$routes->get('/konfirmasi','Produk::konfirmasi');
+$routes->get('/produk','Produk::produk');
+
+// profil
+$routes->get('/profil','Profil');
 
 
 /**

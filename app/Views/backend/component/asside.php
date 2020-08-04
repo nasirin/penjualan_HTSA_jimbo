@@ -23,7 +23,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/" class="nav-link <?= ($active == 'home') ? 'active' : '' ?>">
+                    <a href="/dashboard" class="nav-link <?= ($active == 'home') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -39,7 +39,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/produk" class="nav-link <?= ($active == 'produk') ? 'active' : '' ?>">
+                    <a href="/admin/produk" class="nav-link <?= ($active == 'produk') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-cubes"></i>
                         <p>
                             Produk
@@ -54,49 +54,8 @@
                         </p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview">
-                    <a href="" class="nav-link">
-                        <i class="nav-icon fas fa-copy"></i>
-                        <p>
-                            Laporan
-                            <i class="fas fa-angle-left right"></i>
-                        </p>
-                    </a>
-                    <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Harian</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Mingguan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="backend/pages/layout/boxed.html" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Bulanan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Tahunan</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Quartal</p>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
                 <li class="nav-item">
-                    <a href="/logout" class="nav-link" onclick="return confirm('apakah anda yakin?')">
+                    <a href="/admin/logout" class="nav-link" onclick="return confirm('apakah anda yakin?')">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout
