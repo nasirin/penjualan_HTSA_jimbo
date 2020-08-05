@@ -23,7 +23,7 @@ class ProdukController extends BaseController
     public function index()
     {
         if (session()->get('username') == '') {
-            return view('backend/login');
+            return redirect()->to('/dashboard');
         } elseif (session()->get('level') != 'admin') {
             return redirect()->to('/');
         } else {

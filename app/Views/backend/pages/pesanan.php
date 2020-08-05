@@ -43,7 +43,7 @@
                             <th>#</th>
                             <th>Invoice</th>
                             <th>Nama Pelanggan</th>
-                            <th>Total Pembayaran</th>
+                            <th>Total pembayaran</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -54,8 +54,8 @@
                             <tr>
                                 <td><?= $no++; ?></td>
                                 <td><?= $data['id_pes']; ?></td> <!-- INV bulan tahun increment -->
-                                <td><?= $data['nama']; ?></td>
-                                <td>Rp.<?= number_format($data['qty_pesanan'] * $data['harga_produk'], 0, ',', '.'); ?></td>
+                                <td><?= ucwords($data['nama']); ?></td>
+                                <td>Rp. <?= number_format($data['total_pesanan'],0,',','.'); ?></td>
                                 <td><?= $data['status_pesanan']; ?></td>
                                 <td>
                                     <!-- jika status belom di bayar jangan tampilkan print -->

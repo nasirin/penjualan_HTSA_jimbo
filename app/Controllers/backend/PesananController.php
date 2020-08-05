@@ -39,9 +39,10 @@ class PesananController extends BaseController
             $data = [
                 'title' => "HTSA | Pesanan",
                 'active' => "pesanan",
-                'pesanan' => $this->mpesanan->detail($id)
+                'pesanan' => $this->mpesanan->detail($id),
+                'detail' => $this->mpesanan->get_detail($id),
             ];
-            return view('backend/pages/detail_pesanan', $data);
+            return view('backend/pages/pesanan_detail', $data);
         }
     }
     public function show_invoice()

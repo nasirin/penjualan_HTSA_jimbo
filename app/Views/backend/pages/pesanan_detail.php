@@ -6,7 +6,7 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Detail Pesanan | <?= $pesanan['id_pes']; ?></h1>
+                <h1 class="m-0 text-dark">Detail Pesanan | <?= $pesanan['id_pesanan']; ?></h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
@@ -36,30 +36,26 @@
                             <tbody>
                                 <tr>
                                     <th colspan="2">Nama Pelangan</th>
-                                    <td>Sulastri</td>
+                                    <td><?= ucfirst($pesanan['nama']); ?></td>
                                 </tr>
                                 <tr>
                                     <th colspan="2"> Total Pembayaran</th>
-                                    <td>Rp.30.000</td>
+                                    <td>Rp. <?= $pesanan['total_pesanan']; ?></td>
                                 </tr>
                                 <tr>
-                                    <th colspan="2">Produks</th>
+                                    <th>Produk</th>
+                                    <th>Jumlah</th>
+                                    <th>harga</th>
+                                    <th>Sub total</th>
                                 </tr>
-                                <tr>
-                                    <td>produk 1</td>
-                                    <td>2x</td>
-                                    <td>Rp.10.000</td>
-                                </tr>
-                                <tr>
-                                    <td>produk 1</td>
-                                    <td>2x</td>
-                                    <td>Rp.10.000</td>
-                                </tr>
-                                <tr>
-                                    <td>produk 1</td>
-                                    <td>2x</td>
-                                    <td>Rp.10.000</td>
-                                </tr>                             
+                                <?php foreach ($detail as $data) : ?>
+                                    <tr>
+                                        <td><?= $data['nama_produk']; ?></td>
+                                        <td><?= $data['qty_pesanan']; ?>x</td>
+                                        <td>Rp. <?= number_format($data['harga_produk'], 0, ',', '.'); ?></td>
+                                        <td>Rp. <?= number_format($data['harga_produk']*$data['qty_pesanan'], 0, ',', '.'); ?></td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

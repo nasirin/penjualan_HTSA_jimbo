@@ -80,16 +80,4 @@ class ProdukModel extends Model
             ->where('id_prod', $data['idProduk'])
             ->update($insert);
     }
-
-    // public function total_produk()
-    // {
-    //     // return $this->db->query('SELECT id_prod FROM produk WHERE id_department order BY id_department')->getResultArray();
-    //     // SELECT * FROM detail_product
-    //     //                                     LEFT JOIN inventory ON inventory.id_inventory=detail_product.id_detail_inventory
-    //     //                                     WHERE id_detail_product_kiloan
-    //     return $this->db->table('produk')
-    //     ->join('department','department.id_depart = produk.id_department')
-    //     ->selectCount()
-    //     ->orderBy('id_department')->get()->getResultArray();
-    // }
 }
