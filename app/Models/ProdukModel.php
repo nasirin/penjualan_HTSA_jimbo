@@ -8,13 +8,14 @@ class ProdukModel extends Model
 {
     protected $table = 'produk';
     protected $primaryKey = 'id_prod';
-    protected $allowedFields = ['id_prod', 'id_department', 'nama_produk', 'varian_produk', 'image_produk', 'qty_produk', 'harga_produk', 'ukuran_produk', 'slug_produk', 'keterangan_produk'];
+    protected $allowedFields = ['id_prod', 'id_department', 'id_promo', 'nama_produk', 'varian_produk', 'image_produk', 'qty_produk', 'harga_produk', 'ukuran_produk', 'slug_produk', 'keterangan_produk'];
     protected $useTimestamps = false;
 
     public function get_data($id)
     {
         return $this->db->table('produk')
             ->join('department', 'department.id_depart = produk.id_department')
+            ->join('promo', 'promo.id_promo = produk.id_promo', 'left')
             ->where('id_prod', $id)
             ->get()->getRowArray();
     }
@@ -39,6 +40,7 @@ class ProdukModel extends Model
         $insert = [
             'id_prod' => $data['idProduk'],
             'id_department' => $data['department'],
+            'id_promo' => $data['promo'],
             'nama_produk' => $data['nama'],
             'varian_produk' => $data['varian'],
             'image_produk' => $fileGambar,
@@ -57,12 +59,14 @@ class ProdukModel extends Model
     {
         return $this->db->table('produk')
             ->join('department', 'department.id_depart = produk.id_department')
+            ->join('promo', 'promo.id_promo = produk.id_promo', 'left')
             ->get()->getResultArray();
     }
 
     public function ubah($data, $gambar)
     {
         $insert['id_department'] = $data['department'];
+        $insert['id_promo'] = $data['promo'];
         $insert['nama_produk'] = $data['nama'];
         $insert['varian_produk'] = $data['varian'];
         $insert['image_produk'] = $gambar;

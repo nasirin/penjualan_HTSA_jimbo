@@ -5,16 +5,19 @@ namespace App\Controllers\backend;
 use App\Controllers\BaseController;
 use App\Models\DepartmentModel;
 use App\Models\ProdukModel;
+use App\Models\PromoModel;
 
 class ProdukController extends BaseController
 {
     protected $mproduk;
     protected $mdepartment;
+    protected $mpromo;
 
     public function __construct()
     {
         $this->mproduk = new ProdukModel();
         $this->mdepartment = new DepartmentModel();
+        $this->mpromo = new PromoModel();
     }
 
     public function index()
@@ -48,9 +51,10 @@ class ProdukController extends BaseController
                 'active' => 'produk',
                 'department' => $this->mdepartment->findAll(),
                 'validasi' => \Config\Services::validation(),
-                'kode' => $this->mproduk->kode()
+                'kode' => $this->mproduk->kode(),
+                'promo' => $this->mpromo->findAll()
             ];
-            return view('backend/pages/form-tambah-produk', $data);
+            return view('backend/pages/produk_tambah', $data);
         }
     }
 
@@ -66,9 +70,10 @@ class ProdukController extends BaseController
                 'active' => 'produk',
                 'department' => $this->mdepartment->findAll(),
                 'produk' => $this->mproduk->get_data($id),
+                'promo' => $this->mpromo->findAll(),
                 'validasi' => \Config\Services::validation(),
             ];
-            return view('backend/pages/form-ubah-produk', $data);
+            return view('backend/pages/produk_ubah', $data);
         }
     }
 
@@ -119,7 +124,7 @@ class ProdukController extends BaseController
 
         $this->mproduk->simpan($input, $fileGambar);
         session()->setFlashdata('success_produk', 'Data Berhasil Di Tambah');
-        return redirect()->to('/produk');
+        return redirect()->to('/admin/produk');
     }
 
     public function hapus($id)
@@ -185,7 +190,7 @@ class ProdukController extends BaseController
 
         $this->mproduk->ubah($input, $insert);
         session()->setFlashdata('success_produk', 'Data Berhasil Di ubah');
-        return redirect()->to('/produk');
+        return redirect()->to('/admin/produk');
     }
 
     public function detail($id)
@@ -201,7 +206,7 @@ class ProdukController extends BaseController
                 'department' => $this->mdepartment->findAll(),
                 'produk' => $this->mproduk->get_data($id),
             ];
-            return view('backend/pages/detail_produk', $data);
+            return view('backend/pages/produk_detail', $data);
         }
     }
 }

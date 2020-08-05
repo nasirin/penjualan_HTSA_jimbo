@@ -58,7 +58,7 @@
                             <div class="col-md-3 col-sm-3 col-3">
                                 <h4>Promo</h4> <!-- kalo habis badge-warning-->
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <h5> <span class="badge badge-pill badge-info"><?= $produk['qty_produk']; ?></span></h5>                                    
+                                    <h5> <span class="badge badge-pill badge-info"><?= $produk['nama_promo']; ?></span></h5>                                    
                                 </div>
                             </div>
                         </div>

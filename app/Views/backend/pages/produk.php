@@ -57,6 +57,7 @@
                                 <th>Varian</th>
                                 <th>QTY</th>
                                 <th>Ukuran</th>
+                                <th>Promo</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -66,19 +67,20 @@
                                 <tr>
                                     <td><?= $no++; ?></td>
                                     <td><?= $data['id_prod']; ?></td>
-                                    <td><?= $data['nama_department']; ?></td>
-                                    <td><?= $data['nama_produk']; ?></td>
+                                    <td><?= ucfirst($data['nama_department']); ?></td>
+                                    <td><?= ucfirst($data['nama_produk']); ?></td>
                                     <td>Rp.<?= number_format($data['harga_produk'], 0, ',', '.'); ?></td>
                                     <td><?= $data['varian_produk']; ?></td>
                                     <td><?= $data['qty_produk']; ?></td>
                                     <td><?= $data['ukuran_produk']; ?></td>
+                                    <td><?= ucwords($data['nama_promo']); ?></td>
                                     <td>
-                                        <a href="/produk/detail/<?= $data['id_prod']; ?>" class="btn btn-sm btn-secondary"> <i class="fa fa-eye"></i> </a>
-                                        <a href="/produk/edit/<?= $data['id_prod']; ?>" class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i> </a>
+                                        <a href="/produk/detail/<?= $data['id_prod']; ?>" class="btn btn-xs btn-secondary"> <i class="fa fa-eye"></i> </a>
+                                        <a href="/produk/edit/<?= $data['id_prod']; ?>" class="btn btn-xs btn-warning"> <i class="fa fa-edit"></i> </a>
                                         <form action="/produk/hapus/<?= $data['id_prod']; ?>" method="POST" class="d-inline">
                                             <?= csrf_field(); ?>
                                             <!-- <input type="hidden" name="_method" value="delete"> -->
-                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data?')"><i class="fa fa-trash"></i> </button>
+                                            <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Yakin hapus data?')"><i class="fa fa-trash"></i> </button>
                                         </form>
                                     </td>
                                 </tr>
