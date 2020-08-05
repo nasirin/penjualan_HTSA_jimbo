@@ -37,20 +37,26 @@
                         <p class="text-justify"><?= ucfirst($produk['keterangan_produk']); ?></p>
                         <hr>
                         <div class="row">
-                            <div class="col-md-4 col-sm-4 col-4">
+                            <div class="col-md-3 col-sm-3 col-3">
                                 <h4>Varian</h4>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <h5><span class="badge badge-pill badge-info"><?= $produk['varian_produk']; ?></span></h5>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-4">
+                            <div class="col-md-3 col-sm-3 col-3">
                                 <h4>Ukuran</h4>
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <h5> <span class="badge badge-pill badge-info"><?= $produk['ukuran_produk']; ?> (ml)</span></h5>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-4">
+                            <div class="col-md-3 col-sm-3 col-3">
                                 <h4>Quantity</h4> <!-- kalo habis badge-warning-->
+                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                    <h5> <span class="badge badge-pill badge-info"><?= $produk['qty_produk']; ?></span></h5>                                    
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-3 col-3">
+                                <h4>Promo</h4> <!-- kalo habis badge-warning-->
                                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                                     <h5> <span class="badge badge-pill badge-info"><?= $produk['qty_produk']; ?></span></h5>                                    
                                 </div>

@@ -47,8 +47,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/produk" class="nav-link <?= ($active == 'promo') ? 'active' : '' ?>">
-                        <i class="nav-icon fas fa-cubes"></i>
+                    <a href="/admin/promo" class="nav-link <?= ($active == 'promo') ? 'active' : '' ?>">
+                        <i class="nav-icon fas fa-tags"></i>
                         <p>
                             Promo
                         </p>

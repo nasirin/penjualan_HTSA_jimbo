@@ -47,6 +47,15 @@ $routes->get('/pesanan/detail/(:any)', 'backend\PesananController::detail/$1');
 $routes->get('/pesanan/invoice', 'backend\PesananController::show_invoice');
 $routes->get('/pesanan/print', 'backend\PesananController::print');
 
+// promo
+$routes->get('/admin/promo','backend\PromoController');
+$routes->get('/promo/tambah','backend\PromoController::tambah');
+$routes->post('/promo/simpan','backend\PromoController::simpan');
+$routes->get('/promo/detail/(:any)','backend\PromoController::detail/$1');
+$routes->get('/promo/edit/(:any)','backend\PromoController::edit/$1');
+$routes->post('/promo/ubah/(:any)','backend\PromoController::ubah/$1');
+$routes->post('/promo/hapus/(:any)','backend\PromoController::hapus/$1');
+
 // PRODUK
 $routes->get('/admin/produk', 'backend\ProdukController');
 $routes->get('/produk/tambah/', 'backend\ProdukController::tambah');
@@ -54,7 +63,6 @@ $routes->post('/produk/simpan/', 'backend\ProdukController::simpan');
 $routes->add('/produk/ubah/(:segment)', 'backend\ProdukController::ubah/$1');
 $routes->add('/produk/edit/(:segment)', 'backend\ProdukController::edit/$1');
 $routes->add('/produk/hapus/(:any)', 'backend\ProdukController::hapus/$1');
-$routes->add('/produk/edit/(:segment)', 'backend\ProdukController::edit/$1');
 $routes->get('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
 
 // DEPARTMENT
