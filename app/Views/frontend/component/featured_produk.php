@@ -8,10 +8,13 @@
                 <div class="featured__controls">
                     <ul>
                         <li class="active" data-filter="*">All</li>
-                        <li data-filter=".oranges">Oranges</li>
-                        <li data-filter=".fresh-meat">Fresh Meat</li>
+                        <?php foreach ($department as $data) : ?>
+                            <li data-filter=".oranges"><?= $data['nama_department']; ?></li>
+                        <?php endforeach; ?>
+                        <!-- <li data-filter=".oranges">Oranges</li> -->
+                        <!-- <li data-filter=".fresh-meat">Fresh Meat</li>
                         <li data-filter=".vegetables">Vegetables</li>
-                        <li data-filter=".fastfood">Fastfood</li>
+                        <li data-filter=".fastfood">Fastfood</li> -->
                     </ul>
                 </div>
             </div>

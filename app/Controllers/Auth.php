@@ -21,14 +21,13 @@ class Auth extends BaseController
     public function login()
     {
         $post = $this->request->getVar();
-        // $pass = md5($post['pass']);
-        // dd($pass);
         $user = $this->mauth->login($post);
 
         if ($user) {
             $data = [
                 'username' => $user['nama'],
-                'level' => 'pelanggan'
+                'level' => 'pelanggan',
+                'id' => $user['id_pel']
             ];
             session()->set($data);
             return redirect()->to('/');

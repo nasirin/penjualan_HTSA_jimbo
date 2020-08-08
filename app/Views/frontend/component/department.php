@@ -9,7 +9,7 @@
                     </div>
                     <ul>
                         <?php foreach ($department as $data) : ?>
-                            <li><a href="#"><?= $data['nama_department']; ?></a></li>
+                            <li><a href="#"><?= ucwords($data['nama_department']); ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
@@ -21,7 +21,7 @@
                         <!-- <span>FRUIT FRESH</span> -->
                         <h2>CV. Anugerah Abadi <br />HTSA</h2>
                         <p>kami menyediakan berbagai macam kebutuhan <br> kebersihan rumah tangga anda</p>
-                        <a href="/detail" class="primary-btn">SHOP NOW</a>
+                        <a href="/produk" class="primary-btn">SHOP NOW</a>
                     </div>
                 </div>
             </div>

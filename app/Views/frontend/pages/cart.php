@@ -18,72 +18,43 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="shoping__cart__item">
-                                    <img src="frontend/img/cart/cart-1.jpg" alt="">
-                                    <h5>Vegetable’s Package</h5>
-                                </td>
-                                <td class="shoping__cart__price">
-                                    $55.00
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping__cart__total">
-                                    $110.00
-                                </td>
-                                <td class="shoping__cart__item__close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="shoping__cart__item">
-                                    <img src="frontend/img/cart/cart-2.jpg" alt="">
-                                    <h5>Fresh Garden Vegetable</h5>
-                                </td>
-                                <td class="shoping__cart__price">
-                                    $39.00
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping__cart__total">
-                                    $39.99
-                                </td>
-                                <td class="shoping__cart__item__close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="shoping__cart__item">
-                                    <img src="frontend/img/cart/cart-3.jpg" alt="">
-                                    <h5>Organic Bananas</h5>
-                                </td>
-                                <td class="shoping__cart__price">
-                                    $69.00
-                                </td>
-                                <td class="shoping__cart__quantity">
-                                    <div class="quantity">
-                                        <div class="pro-qty">
-                                            <input type="text" value="1">
-                                        </div>
-                                    </div>
-                                </td>
-                                <td class="shoping__cart__total">
-                                    $69.99
-                                </td>
-                                <td class="shoping__cart__item__close">
-                                    <span class="icon_close"></span>
-                                </td>
-                            </tr>
+                            <?php if ($keranjang) : ?>
+                                <?php foreach ($keranjang as $data) : ?>
+                                    <tr>
+                                        <td class="shoping__cart__item">
+                                            <img src="/img/produk/<?= $data['image_produk']; ?>" alt="" width="80px">
+                                            <h5><?= ucwords($data['nama_produk']); ?></h5>
+                                        </td>
+                                        <td class="shoping__cart__price">
+                                            <?php if ($data['id_promo']) : ?>
+                                                Rp. <?= number_format($data['harga_produk'] - $data['harga_produk'] * $data['potongan'] / 100, 0, ',', '.'); ?>
+                                            <?php else : ?>
+                                                Rp. <?= number_format($data['harga_produk'], 0, ',', '.'); ?>
+                                            <?php endif; ?>
+                                        </td>
+                                        <td class="shoping__cart__quantity">
+                                            <div class="quantity">
+                                                <div class="pro-qty">
+                                                    <input type="text" value="<?= $data['qty']; ?>">
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="shoping__cart__total">
+                                            Rp. <?= number_format(($data['harga_produk'] - $data['harga_produk'] * $data['potongan'] / 100) * $data['qty'], 0, ',', '.'); ?>
+                                        </td>
+                                        <td class="shoping__cart__item__close">
+                                            <form action="/hapus/<?= $data['id_ker']; ?>" method="POST">
+                                                <?= csrf_field(); ?>
+                                                <button class="btn" type="submit"> <span class="icon_close"></span></button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else : ?>
+                                <tr>
+                                    <td colspan="5" class="text-muted">Keranjang Kosong</td>
+                                </tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>
@@ -116,11 +87,22 @@
             <div class="col-lg-6">
                 <div class="shoping__checkout">
                     <h5>Cart Total</h5>
-                    <ul>
-                        <li>Subtotal <span>$454.98</span></li>
-                        <li>Total <span>$454.98</span></li>
-                    </ul>
-                    <a href="/checkout" class="primary-btn">PROCEED TO CHECKOUT</a>
+                    <?php if ($keranjang) : ?>
+                        <ul>
+                            <li>Subtotal <span>$454.98</span></li>
+                            <li>Total <span>$454.98</span></li>
+                        </ul>
+                        <form action="/checkout" method="POST">
+                            <?= csrf_field(); ?>
+                            <input type="hidden" name="idPel" value="<?= session()->get('id'); ?>">
+                            <input type="hidden" name="idProduk" id="">
+                            <input type="hidden" name="qty" id="">
+                            <input type="hidden" name="total" id="">
+                            <button class="btn btn-success btn-block rounded-0">PROCEED TO CHECKOUT</button>
+                        </form>
+                    <?php else : ?>
+
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

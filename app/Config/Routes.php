@@ -72,6 +72,7 @@ $routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1');
 $routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1');
 
 // FRONT END
+// auth
 $routes->get('/','Home');
 $routes->get('/login','Auth');
 $routes->post('/masuk','Auth::login');
@@ -80,11 +81,15 @@ $routes->get('/daftar','Auth::daftar');
 $routes->post('/register','Auth::register');
 
 // produk
-$routes->get('/detail','Produk');
-$routes->get('/cart','Produk::cart');
+$routes->get('/detail/(:any)','Produk/$1');
 $routes->get('/konfirmasi','Produk::konfirmasi');
 $routes->get('/produk','Produk::produk');
 $routes->get('/checkout','Produk::checkout');
+
+// cart
+$routes->get('/cart','Keranjang');
+$routes->post('/tambah/(:any)','Keranjang::tambah/$1');
+$routes->post('/hapus/(:any)','Keranjang::hapus/$1');
 
 // profil
 $routes->get('/profil','Profil');

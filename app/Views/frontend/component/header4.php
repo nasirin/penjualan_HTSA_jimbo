@@ -9,7 +9,7 @@
             <div class="col-lg-6">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="cart"><i class="fa fa-shopping-bag"></i> <span><?= $total_keranjang; ?></span></a></li>
                     </ul>
                     <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>

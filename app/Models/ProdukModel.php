@@ -20,6 +20,15 @@ class ProdukModel extends Model
             ->get()->getRowArray();
     }
 
+    public function detail($id)
+    {
+        return $this->db->table('produk')
+            // ->join('department', 'department.id_depart = produk.id_department')
+            ->join('promo', 'promo.id_promo = produk.id_promo', 'left')
+            ->where('slug_produk', $id)
+            ->get()->getRowArray();
+    }
+
     public function kode()
     {
         $code = $this->db->query("SELECT MAX(RIGHT(id_prod,3)) AS kd From produk");
@@ -79,5 +88,22 @@ class ProdukModel extends Model
         return $this->db->table('produk')
             ->where('id_prod', $data['idProduk'])
             ->update($insert);
+    }
+
+    public function promo()
+    {
+        return $this->db->table('produk')
+            ->join('promo', 'promo.id_promo = produk.id_promo', 'left')
+            ->join('department', 'department.id_depart = produk.id_department', 'left')
+            ->where('status_promo', 'aktif')
+            ->get()->getResultArray();
+    }
+
+    public function varian($id)
+    {
+        return $this->db->table('produk')
+            ->select('varian_produk')
+            ->where('slug_produk', $id)
+            ->get()->getResultArray();
     }
 }

@@ -3,28 +3,28 @@
 namespace App\Controllers;
 
 use App\Models\DepartmentModel;
+use App\Models\ProdukModel;
 
 class Produk extends BaseController
 {
     protected $mdepartment;
+    protected $mproduk;
 
     public function __construct()
     {
         $this->mdepartment = new DepartmentModel();
+        $this->mproduk = new ProdukModel();
     }
 
-    public function index()
+    public function index($id)
     {
         $data = [
             'department' => $this->mdepartment->findAll(),
+            'produk' => $this->mproduk->detail($id),
+            'varian' => $this->mproduk->varian($id)
         ];
 
         return view('frontend/pages/detail', $data);
-    }
-
-    public function cart()
-    {
-        return view('frontend/pages/cart');
     }
 
     public function konfirmasi()

@@ -17,7 +17,11 @@
                             <a href="#"><i class="fa fa-instagram"></i></a>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="frontend/#"><i class="fa fa-user"></i> Login</a>
+                            <?php if (session()->get('username')) : ?>
+                                <a href="/profil"><i class="fa fa-user"></i> <?= ucwords(session()->get('username')); ?></a>
+                            <?php else : ?>
+                                <a href="login"><i class="fa fa-user"></i> Login</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>

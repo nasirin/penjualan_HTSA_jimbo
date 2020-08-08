@@ -17,7 +17,11 @@
                             <a href="#"><i class="fa fa-instagram"></i></a>
                         </div>
                         <div class="header__top__right__auth">
-                            <a href="frontend/#"><i class="fa fa-user"></i> Login</a>
+                            <?php if (session()->get('username')) : ?>
+                                <a href="/profil"><i class="fa fa-user"></i> <?= ucwords(session()->get('username')); ?></a>
+                            <?php else : ?>
+                                <a href="login"><i class="fa fa-user"></i> Login</a>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
@@ -54,7 +58,7 @@
             <div class="col-lg-2">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+                        <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span><?= $total_keranjang; ?></span></a></li>
                     </ul>
                     <div class="header__cart__price">item: <span>$150.00</span></div>
                 </div>
