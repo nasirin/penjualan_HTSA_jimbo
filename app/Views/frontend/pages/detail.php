@@ -24,22 +24,16 @@
                     <p><?= ucwords($produk['keterangan_produk']); ?></p>
 
                     <!-- FORM -->
-                    <form action="/tambah/<?= $produk['slug_produk']; ?>" method="post">
+                    <form action="/tambah/<?= $produk['slug_produk']; ?>" method="POST">
                         <?= csrf_field(); ?>
                         <input type="hidden" name="idProduk" id="idProd" value="<?= $produk['id_prod']; ?>">
-                        <input type="hidden" name="idPel" id="idProd" value="<?= session()->get('id'); ?>">
+                        <input type="hidden" name="idPel" id="idPel" value="<?= session()->get('id'); ?>">
+                        <input type="hidden" name="promo" id="idPel" value="<?= $produk['id_promo']; ?>">
+                        <input type="hidden" value="<?= ($produk['id_promo'] != null) ? $produk['harga_produk'] - $produk['harga_produk'] * $produk['potongan'] / 100 :  $produk['harga_produk']; ?>" name="total">
                         <div class="product__details__quantity">
                             <div class="quantity">
                                 <div class="pro-qty">
                                     <input type="text" value="1" name="qty">
-                                </div>
-                                <div class="mt-2">
-                                    <select name="varian" id="" class="rounded-0 w-100 bg-light" required>
-                                        <option value="">Pilih Varian</option>
-                                        <?php foreach ($varian as $data) : ?>
-                                            <option value="<?= $data['varian_produk']; ?>"><?= $data['varian_produk']; ?></option>
-                                        <?php endforeach; ?>
-                                    </select>
                                 </div>
                             </div>
                         </div>

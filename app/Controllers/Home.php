@@ -26,7 +26,7 @@ class Home extends BaseController
 			'department' => $this->mdepartment->findAll(),
 			'promo' => $this->mproduk->promo(),
 			'produk' => $this->mproduk->get(),
-			'total_keranjang' => $this->mkeranjang->countAllResults()
+			'total_keranjang' => $this->mkeranjang->total_keranjang()->countAllResults()
 		];
 		return view('frontend/pages/home',$data);
 	}

@@ -48,9 +48,9 @@
             <div class="col-lg-2">
                 <div class="header__cart">
                     <ul>
-                        <li><a href="cart"><i class="fa fa-shopping-bag"></i> <span><?= $total_keranjang; ?></span></a></li>
+                        <li><a href="/cart"><i class="fa fa-shopping-bag"></i> <span><?= session()->get('username') ? $total_keranjang : 0  ; ?></span></a></li>
                     </ul>
-                    <div class="header__cart__price">item: <span>$150.00</span></div>
+                    <!-- <div class="header__cart__price">item: <span>$150.00</span></div> -->
                 </div>
             </div>
         </div>

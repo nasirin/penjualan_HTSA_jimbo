@@ -40,7 +40,7 @@
                                             </div>
                                         </td>
                                         <td class="shoping__cart__total">
-                                            Rp. <?= number_format(($data['harga_produk'] - $data['harga_produk'] * $data['potongan'] / 100) * $data['qty'], 0, ',', '.'); ?>
+                                            Rp. <?= number_format($data['subtotal_keranjang'], 0, ',', '.'); ?>
                                         </td>
                                         <td class="shoping__cart__item__close">
                                             <form action="/hapus/<?= $data['id_ker']; ?>" method="POST">
@@ -61,6 +61,7 @@
             </div>
         </div>
         <div class="row">
+            <!-- metode pembayaran -->
             <div class="col-lg-6">
                 <div class="shoping__continue">
                     <div class="shoping__discount">
@@ -89,8 +90,8 @@
                     <h5>Cart Total</h5>
                     <?php if ($keranjang) : ?>
                         <ul>
-                            <li>Subtotal <span>$454.98</span></li>
-                            <li>Total <span>$454.98</span></li>
+                            <li>Subtotal <span>Rp. <?= number_format($subtotal['subtotal_keranjang'], 0, ',', '.'); ?> </span></li>
+                            <li>Total <span>Rp. <?= number_format($subtotal['subtotal_keranjang'], 0, ',', '.'); ?></span></li>
                         </ul>
                         <form action="/checkout" method="POST">
                             <?= csrf_field(); ?>

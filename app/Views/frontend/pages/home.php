@@ -19,20 +19,6 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-7 border-top">
-                <!-- <div class="filter__item">
-                    <div class="row">
-                        <div class="col-lg-4 col-md-5">
-                            <div class="filter__sort">
-                                <h6><span>Short By: </span> Department</h6>
-                            </div>
-                        </div>
-                        <div class="col-lg-4 col-md-4">
-                            <div class="filter__found">
-                                <h6><span>16</span> Products found</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="row mt-3">
 
                     <?php foreach ($produk as $data) : ?>
@@ -48,6 +34,7 @@
                                                 <input type="hidden" value="<?= $data['id_prod']; ?>" name="idProduk">
                                                 <input type="hidden" value="<?= $data['id_promo']; ?>" name="promo">
                                                 <input type="hidden" value="1" name="qty">
+                                                <input type="hidden" value="<?= ($data['id_promo'] != null) ? $data['harga_produk'] - $data['harga_produk'] * $data['potongan'] / 100 :  $data['harga_produk']; ?>" name="total">
                                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                             </form>
                                         </li>

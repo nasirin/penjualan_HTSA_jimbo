@@ -21,7 +21,8 @@ class Keranjang extends BaseController
 
         $data = [
             'keranjang' => $this->mkeranjang->get(),
-            'total_keranjang' => $this->mkeranjang->countAllResults()
+            'total_keranjang' => $this->mkeranjang->total_keranjang()->countAllResults(),
+            'subtotal' => $this->mkeranjang->subtotal()
         ];
         return view('frontend/pages/cart', $data);
     }
@@ -33,16 +34,18 @@ class Keranjang extends BaseController
         }
 
         $post = $this->request->getVar();
-        $data = $this->mkeranjang->findAll();
-        foreach ($data as $key) {
-            if ($key['id_produk'] == $post['idProduk']) {
-                $this->mkeranjang->tambah_qty($post);
-                return redirect()->to('/');
-            }
-        }
+        // $keranjang = $this->mkeranjang->findAll();
+        $keranjang = $this->mkeranjang->get_qty($post);
 
-        $this->mkeranjang->tambah($post);
-        return redirect()->to('/');
+        if ($keranjang['id_produk'] == $post['idProduk']) {
+            // update qty
+            $this->mkeranjang->tambah_qty($post);
+            return redirect()->to('/');
+        } else {
+            // insert data baru
+            $this->mkeranjang->tambah($post);
+            return redirect()->to('/');
+        }
     }
 
     public function hapus($id)

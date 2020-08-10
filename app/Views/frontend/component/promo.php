@@ -20,6 +20,7 @@
                                                 <input type="hidden" value="<?= $data['id_prod']; ?>" name="idProduk">
                                                 <input type="hidden" value="<?= $data['id_promo']; ?>" name="promo">
                                                 <input type="hidden" value="1" name="qty">
+                                                <input type="hidden" value="<?= ($data['id_promo'] != null) ? $data['harga_produk'] - $data['harga_produk'] * $data['potongan'] / 100 :  $data['harga_produk']; ?>" name="total">
                                                 <button type="submit"><i class="fa fa-shopping-cart"></i></button>
                                             </form>
                                         </li>
