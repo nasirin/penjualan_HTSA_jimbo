@@ -106,4 +106,10 @@ class ProdukModel extends Model
             ->where('slug_produk', $id)
             ->get()->getResultArray();
     }
+
+    public function totalProduk()
+    {
+        return $this->db->table('produk')->countAllResults();
+        // ->get()->getRowArray();
+    }
 }

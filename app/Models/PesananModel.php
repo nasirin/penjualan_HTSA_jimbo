@@ -34,4 +34,19 @@ class PesananModel extends Model
         ->where('id_pesanan',$id)
         ->get()->getResultArray();
     }
+
+    public function totalPesananSuccess()
+    {
+        return $this->db->table('pesanan')
+        ->where('status_pesanan','success')
+        ->countAllResults();
+    }
+
+    public function lastPesanan()
+    {
+        return $this->db->table('pesanan')
+        ->limit(10)
+        ->orderBy('id_pes','desc')
+        ->get()->getResultArray();
+    }
 }

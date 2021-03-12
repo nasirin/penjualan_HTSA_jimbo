@@ -30,7 +30,7 @@
                     <div class="info-box-content">
                         <span class="info-box-text">Total Produk</span>
                         <span class="info-box-number">
-                            10
+                            <?= $totalProduk?>
                         </span>
                     </div>
                 </div>
@@ -55,8 +55,8 @@
                     <span class="info-box-icon bg-success elevation-1"><i class="fas fa-shopping-cart"></i></span>
 
                     <div class="info-box-content">
-                        <span class="info-box-text">Total Penjualan</span>
-                        <span class="info-box-number">760</span>
+                        <span class="info-box-text">Total Penjualan Sukses</span>
+                        <span class="info-box-number"><?= $totalPenjualan?></span>
                     </div>
                 </div>
             </div>
@@ -67,7 +67,7 @@
 
                     <div class="info-box-content">
                         <span class="info-box-text">Total Pelanggan</span>
-                        <span class="info-box-number">2,000</span>
+                        <span class="info-box-number"><?= $totalPelanggan?></span>
                     </div>
                 </div>
             </div>
@@ -144,76 +144,32 @@
                                 <thead>
                                     <tr>
                                         <th>Order ID</th>
-                                        <th>Item</th>
+                                        <th>Pelanggan</th>
+                                        <th>Total Produk</th>
                                         <th>Status</th>
-                                        <th>Popularity</th>
+                                        <th>Total Harga</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <?php foreach($lastOrder as $data):?>
                                     <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR9842</a></td>
-                                        <td>Call of Duty IV</td>
-                                        <td><span class="badge badge-success">Shipped</span></td>
+                                        <td><a href="#"><?= $data['id_pes']?></a></td>
+                                        <td><?= $data['id_pelanggan']?></td>
+                                        <td><?= 'total item'?></td>
+                                        <td><span class="badge badge-success"><?= $data['status_pesanan']?></span></td>
                                         <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
+                                            <div class="sparkbar" data-color="#00a65a" data-height="20"><?= 'total' ?></div>
                                         </td>
                                     </tr>
-                                    <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR1848</a></td>
-                                        <td>Samsung Smart TV</td>
-                                        <td><span class="badge badge-warning">Pending</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR7429</a></td>
-                                        <td>iPhone 6 Plus</td>
-                                        <td><span class="badge badge-danger">Delivered</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR7429</a></td>
-                                        <td>Samsung Smart TV</td>
-                                        <td><span class="badge badge-info">Processing</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#00c0ef" data-height="20">90,80,-90,70,-61,83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR1848</a></td>
-                                        <td>Samsung Smart TV</td>
-                                        <td><span class="badge badge-warning">Pending</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f39c12" data-height="20">90,80,-90,70,61,-83,68</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR7429</a></td>
-                                        <td>iPhone 6 Plus</td>
-                                        <td><span class="badge badge-danger">Delivered</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#f56954" data-height="20">90,-80,90,70,-61,83,63</div>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td><a href="backend/pages/examples/invoice.html">OR9842</a></td>
-                                        <td>Call of Duty IV</td>
-                                        <td><span class="badge badge-success">Shipped</span></td>
-                                        <td>
-                                            <div class="sparkbar" data-color="#00a65a" data-height="20">90,80,90,-70,61,-83,63</div>
-                                        </td>
-                                    </tr>
+                                    <?php endforeach;?>
                                 </tbody>
                             </table>
                         </div>
                     </div>
 
                     <div class="card-footer clearfix">
-                        <a href="backend/javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a>
-                        <a href="backend/javascript:void(0)" class="btn btn-sm btn-secondary float-right">View All Orders</a>
+                        <!-- <a href="backend/javascript:void(0)" class="btn btn-sm btn-info float-left">Place New Order</a> -->
+                        <a href="pesanan" class="btn btn-sm btn-info float-right">View All Orders</a>
                     </div>
 
                 </div>
