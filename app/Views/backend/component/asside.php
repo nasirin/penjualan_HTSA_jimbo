@@ -1,6 +1,6 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="/" class="brand-link">
+    <a href="/admin" class="brand-link">
         <img src="/img/logo 2.png" alt="AdminLTE Logo" class="brand-image bg-white img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light">HTSA</span>
     </a>
@@ -13,7 +13,7 @@
                 <img src="/backend/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block"><?= session()->get('username'); ?></a>
+                <a href="#" class="d-block"><?= ucwords(session()->get('username')); ?></a>
             </div>
         </div>
 
@@ -23,7 +23,7 @@
                 <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="/dashboard" class="nav-link <?= ($active == 'home') ? 'active' : '' ?>">
+                    <a href="/admin" class="nav-link <?= ($active == 'home') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -63,7 +63,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/admin/logout" class="nav-link" onclick="return confirm('apakah anda yakin?')">
+                    <a href="#" class="nav-link" onclick="return confirm('apakah anda yakin?')">
+                        <i class="nav-icon fas fa-users"></i>
+                        <p>
+                            Users
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/auth/logout" class="nav-link" onclick="return confirm('apakah anda yakin?')">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout

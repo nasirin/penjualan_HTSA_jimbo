@@ -23,6 +23,9 @@
  <!-- PAGE SCRIPTS -->
  <script src="/backend/dist/js/pages/dashboard2.js"></script>
 
+ <!-- sweet alert 2 -->
+ <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
  <!-- DataTables -->
  <script src="/backend/plugins/datatables/jquery.dataTables.min.js"></script>
  <script src="/backend/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>

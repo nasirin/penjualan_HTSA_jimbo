@@ -14,9 +14,13 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css"> -->
     <!-- Theme style -->
     <link rel="stylesheet" href="backend/dist/css/adminlte.min.css">
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="backend/plugins/toastr/toastr.min.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
@@ -28,17 +32,13 @@
             <a href="" class="d-inline">PT. Anugerah Abadi HTSA</a>
         </div>
         <!-- /.login-logo -->
-        <?php if (session()->getFlashdata('error')) : ?>
-            <div class="alert alert-danger" role="alert">
-                <?= session()->getFlashdata('error') ?>
-            </div>
-        <?php endif; ?>
+        <div class="login" data-login="<?= session()->getFlashdata('error') ?>"></div>
 
         <div class="card">
             <div class="card-body login-card-body">
                 <!-- <p class="login-box-msg">Sign in to start your session</p> -->
 
-                <form action="admin/login" method="post">
+                <form action="/auth/login" method="post">
                     <?= csrf_field(); ?>
                     <div class="input-group mb-3">
                         <input type="email" class="form-control" placeholder="Email" required name="email">
@@ -70,8 +70,22 @@
     <script src="backend/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
     <script src="backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 -->
+    <script src="backend/plugins/sweetalert2/sweetalert2.min.js"></script>
+    <!-- Toastr -->
+    <script src="backend/plugins/toastr/toastr.min.js"></script>
+    <script src="assets/myscript/login.js"></script>
     <!-- AdminLTE App -->
     <script src="backend/dist/js/adminlte.min.js"></script>
+
+    <!-- <script>
+        $('.login').click(function() {
+            Toast.fire({
+                icon: 'warning',
+                title: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+            })
+        });
+    </script> -->
 
 </body>
 

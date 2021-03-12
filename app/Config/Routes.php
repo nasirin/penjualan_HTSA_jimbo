@@ -35,26 +35,33 @@ $routes->setAutoRoute(true);
 // ADMIN
 // home
 // $routes->get('/admin', 'Home::login');
-$routes->get('/dashboard', 'backend\Home');
+$routes->get('/admin', 'backend\Home', ['filter' => 'NotLogin']);
 
 // login
-$routes->post('/admin/login','backend\LoginController::login');
-$routes->get('/admin/logout','backend\LoginController::logout');
+$routes->group('auth', function ($routes) {
+	$routes->get('/', 'backend\LoginController',['filter' => 'IsLogin']);
+	$routes->post('login','backend\LoginController::login');
+	$routes->get('logout','backend\LoginController::logout');
+});
+// $routes->post('/admin/login','backend\LoginController::login');
+// $routes->get('/admin/logout','backend\LoginController::logout');
 
 // pesanan
-$routes->get('/pesanan', 'backend\PesananController');
-$routes->get('/pesanan/detail/(:any)', 'backend\PesananController::detail/$1');
-$routes->get('/pesanan/invoice', 'backend\PesananController::show_invoice');
-$routes->get('/pesanan/print', 'backend\PesananController::print');
+$routes->group('pesanan',['filter'=>'NotLogin'],function($routes){
+	$routes->get('/', 'backend\PesananController');
+	$routes->get('detail/(:any)', 'backend\PesananController::detail/$1');
+	$routes->get('invoice', 'backend\PesananController::show_invoice');
+	$routes->get('print', 'backend\PesananController::print');
+});
 
 // promo
-$routes->get('/admin/promo','backend\PromoController');
-$routes->get('/promo/tambah','backend\PromoController::tambah');
-$routes->post('/promo/simpan','backend\PromoController::simpan');
-$routes->get('/promo/detail/(:any)','backend\PromoController::detail/$1');
-$routes->get('/promo/edit/(:any)','backend\PromoController::edit/$1');
-$routes->post('/promo/ubah/(:any)','backend\PromoController::ubah/$1');
-$routes->post('/promo/hapus/(:any)','backend\PromoController::hapus/$1');
+$routes->get('/admin/promo', 'backend\PromoController');
+$routes->get('/promo/tambah', 'backend\PromoController::tambah');
+$routes->post('/promo/simpan', 'backend\PromoController::simpan');
+$routes->get('/promo/detail/(:any)', 'backend\PromoController::detail/$1');
+$routes->get('/promo/edit/(:any)', 'backend\PromoController::edit/$1');
+$routes->post('/promo/ubah/(:any)', 'backend\PromoController::ubah/$1');
+$routes->post('/promo/hapus/(:any)', 'backend\PromoController::hapus/$1');
 
 // PRODUK
 $routes->get('/admin/produk', 'backend\ProdukController');
@@ -66,33 +73,33 @@ $routes->add('/produk/hapus/(:any)', 'backend\ProdukController::hapus/$1');
 $routes->get('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
 
 // DEPARTMENT
-$routes->get('/department','backend\DepartmentController');
+$routes->get('/department', 'backend\DepartmentController');
 $routes->post('/depart/simpan/', 'backend\DepartmentController::simpan');
 $routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1');
 $routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1');
 
 // FRONT END
 // auth
-$routes->get('/','Home');
-$routes->get('/login','Auth');
-$routes->post('/masuk','Auth::login');
-$routes->get('/logout','Auth::logout');
-$routes->get('/daftar','Auth::daftar');
-$routes->post('/register','Auth::register');
+$routes->get('/', 'Home');
+$routes->get('/login', 'Auth');
+$routes->post('/masuk', 'Auth::login');
+$routes->get('/logout', 'Auth::logout');
+$routes->get('/daftar', 'Auth::daftar');
+$routes->post('/register', 'Auth::register');
 
 // produk
-$routes->get('/detail/(:any)','Produk/$1');
-$routes->get('/konfirmasi','Produk::konfirmasi');
-$routes->get('/produk','Produk::produk');
-$routes->get('/checkout','Produk::checkout');
+$routes->get('/detail/(:any)', 'Produk/$1');
+$routes->get('/konfirmasi', 'Produk::konfirmasi');
+$routes->get('/produk', 'Produk::produk');
+$routes->get('/checkout', 'Produk::checkout');
 
 // cart
-$routes->get('/cart','Keranjang');
-$routes->post('/tambah/(:any)','Keranjang::tambah/$1');
-$routes->post('/hapus/(:any)','Keranjang::hapus/$1');
+$routes->get('/cart', 'Keranjang');
+$routes->post('/tambah/(:any)', 'Keranjang::tambah/$1');
+$routes->post('/hapus/(:any)', 'Keranjang::hapus/$1');
 
 // profil
-$routes->get('/profil','Profil');
+$routes->get('/profil', 'Profil');
 
 
 /**
