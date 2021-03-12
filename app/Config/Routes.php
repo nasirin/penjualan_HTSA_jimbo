@@ -55,28 +55,34 @@ $routes->group('pesanan',['filter'=>'NotLogin'],function($routes){
 });
 
 // promo
-$routes->get('/admin/promo', 'backend\PromoController');
-$routes->get('/promo/tambah', 'backend\PromoController::tambah');
-$routes->post('/promo/simpan', 'backend\PromoController::simpan');
-$routes->get('/promo/detail/(:any)', 'backend\PromoController::detail/$1');
-$routes->get('/promo/edit/(:any)', 'backend\PromoController::edit/$1');
-$routes->post('/promo/ubah/(:any)', 'backend\PromoController::ubah/$1');
-$routes->post('/promo/hapus/(:any)', 'backend\PromoController::hapus/$1');
+$routes->group('admin/promo',['filter'=>'NotLogin'],function($routes){
+	$routes->get('/', 'backend\PromoController');
+	$routes->get('/promo/tambah', 'backend\PromoController::tambah');
+	$routes->post('/promo/simpan', 'backend\PromoController::simpan');
+	$routes->get('/promo/detail/(:any)', 'backend\PromoController::detail/$1');
+	$routes->get('/promo/edit/(:any)', 'backend\PromoController::edit/$1');
+	$routes->post('/promo/ubah/(:any)', 'backend\PromoController::ubah/$1');
+	$routes->post('/promo/hapus/(:any)', 'backend\PromoController::hapus/$1');
+});
 
 // PRODUK
-$routes->get('/admin/produk', 'backend\ProdukController');
-$routes->get('/produk/tambah/', 'backend\ProdukController::tambah');
-$routes->post('/produk/simpan/', 'backend\ProdukController::simpan');
-$routes->add('/produk/ubah/(:segment)', 'backend\ProdukController::ubah/$1');
-$routes->add('/produk/edit/(:segment)', 'backend\ProdukController::edit/$1');
-$routes->add('/produk/hapus/(:any)', 'backend\ProdukController::hapus/$1');
-$routes->get('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
+$routes->group('admin/produk/',['filter'=>'NotLogin'],function($routes){
+	$routes->get('/', 'backend\ProdukController');
+	$routes->get('/produk/tambah/', 'backend\ProdukController::tambah');
+	$routes->post('/produk/simpan/', 'backend\ProdukController::simpan');
+	$routes->add('/produk/ubah/(:segment)', 'backend\ProdukController::ubah/$1');
+	$routes->add('/produk/edit/(:segment)', 'backend\ProdukController::edit/$1');
+	$routes->add('/produk/hapus/(:any)', 'backend\ProdukController::hapus/$1');
+	$routes->get('/produk/detail/(:any)', 'backend\ProdukController::detail/$1');
+});
 
 // DEPARTMENT
-$routes->get('/department', 'backend\DepartmentController');
-$routes->post('/depart/simpan/', 'backend\DepartmentController::simpan');
-$routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1');
-$routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1');
+$routes->group('department',['filter'=>'NotLogin'],function($routes){
+	$routes->get('/', 'backend\DepartmentController');
+	$routes->post('/depart/simpan/', 'backend\DepartmentController::simpan');
+	$routes->add('/depart/hapus/(:num)', 'backend\DepartmentController::hapus/$1');
+	$routes->add('/depart/ubah/(:num)', 'backend\DepartmentController::ubah/$1');
+});
 
 // FRONT END
 // auth

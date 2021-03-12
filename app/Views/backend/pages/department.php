@@ -38,7 +38,7 @@
                     <a href="#m-department" data-toggle="modal" class="btn btn-primary btn-sm"> <i class="fas fa-building"></i> Tambah Department </a>
                 </div>
                 <div class="card-body">
-                    <table id="tbl-department" class="table table-hover table-responsive-sm">
+                    <table id="tbl-department" class="table table-hover table-responsive-sm table-sm">
                         <thead>
                             <tr>
                                 <th>#</th>

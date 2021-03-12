@@ -17,42 +17,32 @@ class PromoController extends BaseController
 
     public function index()
     {
-        if (session()->get('username') == '') {
-            return view('backend/login');
-        } elseif (session()->get('level') != 'admin') {
-            return redirect()->to('/');
-        } else {
-            $data = [
-                'title' => 'HTSA | Promo',
-                'active' => 'promo',
-                'promo' => $this->mprommo->findAll(),
-                // 'department' => $this->mdepartment->findAll(),
-                'validasi' => \Config\Services::validation(),
-                // 'get' => $this->mproduk->get(),
-            ];
 
-            return view('backend/pages/promo', $data);
-        }
+        $data = [
+            'title' => 'HTSA | Promo',
+            'active' => 'promo',
+            'promo' => $this->mprommo->findAll(),
+            // 'department' => $this->mdepartment->findAll(),
+            'validasi' => \Config\Services::validation(),
+            // 'get' => $this->mproduk->get(),
+        ];
+
+        return view('backend/pages/promo', $data);
     }
 
     public function tambah()
     {
-        if (session()->get('username') == '') {
-            return view('backend/login');
-        } elseif (session()->get('level') != 'admin') {
-            return redirect()->to('/');
-        } else {
-            $data = [
-                'title' => 'HTSA | Promo',
-                'active' => 'promo',
-                'promo' => $this->mprommo->findAll(),
-                // 'department' => $this->mdepartment->findAll(),
-                'validasi' => \Config\Services::validation(),
-                'kode' => $this->mprommo->kode(),
-            ];
 
-            return view('backend/pages/promo_tambah', $data);
-        }
+        $data = [
+            'title' => 'HTSA | Promo',
+            'active' => 'promo',
+            'promo' => $this->mprommo->findAll(),
+            // 'department' => $this->mdepartment->findAll(),
+            'validasi' => \Config\Services::validation(),
+            'kode' => $this->mprommo->kode(),
+        ];
+
+        return view('backend/pages/promo_tambah', $data);
     }
 
     public function simpan()
@@ -126,7 +116,7 @@ class PromoController extends BaseController
             'potongan' => $valid,
             'status' => $valid,
         ])) {
-            return redirect()->to('/promo/edit/'.$id)->withInput();
+            return redirect()->to('/promo/edit/' . $id)->withInput();
         }
 
 
@@ -138,7 +128,7 @@ class PromoController extends BaseController
     public function hapus($id)
     {
         $this->mprommo->delete($id);
-        session()->setFlashdata('success','Data terhapus');
+        session()->setFlashdata('success', 'Data terhapus');
         return redirect()->to('/admin/promo');
     }
 }

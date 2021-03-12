@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <table id="tbl-produk" class="table table-hover table-responsive-sm">
+                    <table id="tbl-produk" class="table table-hover table-responsive-sm table-sm">
                         <thead>
                             <tr>
                                 <th>#</th>

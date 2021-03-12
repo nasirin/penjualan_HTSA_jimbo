@@ -22,59 +22,44 @@ class ProdukController extends BaseController
 
     public function index()
     {
-        if (session()->get('username') == '') {
-            return redirect()->to('/dashboard');
-        } elseif (session()->get('level') != 'admin') {
-            return redirect()->to('/');
-        } else {
-            $data = [
-                'title' => 'HTSA | Produk',
-                'active' => 'produk',
-                'department' => $this->mdepartment->findAll(),
-                'validasi' => \Config\Services::validation(),
-                'get' => $this->mproduk->get(),
-            ];
 
-            return view('backend/pages/produk', $data);
-        }
+        $data = [
+            'title' => 'HTSA | Produk',
+            'active' => 'produk',
+            'department' => $this->mdepartment->findAll(),
+            'validasi' => \Config\Services::validation(),
+            'get' => $this->mproduk->get(),
+        ];
+
+        return view('backend/pages/produk', $data);
     }
 
     public function tambah()
     {
-        if (session()->get('username') == '') {
-            return view('backend/login');
-        } elseif (session()->get('level') != 'admin') {
-            return redirect()->to('/');
-        } else {
-            $data = [
-                'title' => 'HTSA | Produk',
-                'active' => 'produk',
-                'department' => $this->mdepartment->findAll(),
-                'validasi' => \Config\Services::validation(),
-                'kode' => $this->mproduk->kode(),
-                'promo' => $this->mpromo->findAll()
-            ];
-            return view('backend/pages/produk_tambah', $data);
-        }
+
+        $data = [
+            'title' => 'HTSA | Produk',
+            'active' => 'produk',
+            'department' => $this->mdepartment->findAll(),
+            'validasi' => \Config\Services::validation(),
+            'kode' => $this->mproduk->kode(),
+            'promo' => $this->mpromo->findAll()
+        ];
+        return view('backend/pages/produk_tambah', $data);
     }
 
     public function edit($id)
     {
-        if (session()->get('username') == '') {
-            return view('backend/login');
-        } elseif (session()->get('level') != 'admin') {
-            return redirect()->to('/');
-        } else {
-            $data = [
-                'title' => 'HTSA | Produk',
-                'active' => 'produk',
-                'department' => $this->mdepartment->findAll(),
-                'produk' => $this->mproduk->get_data($id),
-                'promo' => $this->mpromo->findAll(),
-                'validasi' => \Config\Services::validation(),
-            ];
-            return view('backend/pages/produk_ubah', $data);
-        }
+
+        $data = [
+            'title' => 'HTSA | Produk',
+            'active' => 'produk',
+            'department' => $this->mdepartment->findAll(),
+            'produk' => $this->mproduk->get_data($id),
+            'promo' => $this->mpromo->findAll(),
+            'validasi' => \Config\Services::validation(),
+        ];
+        return view('backend/pages/produk_ubah', $data);
     }
 
     public function simpan()
@@ -195,18 +180,13 @@ class ProdukController extends BaseController
 
     public function detail($id)
     {
-        if (session()->get('username') == '') {
-            return view('backend/login');
-        } elseif (session()->get('level') != 'admin') {
-            return redirect()->to('/');
-        } else {
-            $data = [
-                'title' => 'HTSA | Detail produk',
-                'active' => 'produk',
-                'department' => $this->mdepartment->findAll(),
-                'produk' => $this->mproduk->get_data($id),
-            ];
-            return view('backend/pages/produk_detail', $data);
-        }
+
+        $data = [
+            'title' => 'HTSA | Detail produk',
+            'active' => 'produk',
+            'department' => $this->mdepartment->findAll(),
+            'produk' => $this->mproduk->get_data($id),
+        ];
+        return view('backend/pages/produk_detail', $data);
     }
 }
