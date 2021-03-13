@@ -23,8 +23,11 @@
  <!-- PAGE SCRIPTS -->
  <script src="/backend/dist/js/pages/dashboard2.js"></script>
 
- <!-- sweet alert 2 -->
- <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+ <!-- SweetAlert2 -->
+ <script src="backend/plugins/sweetalert2/sweetalert2.min.js"></script>
+ <!-- Toastr -->
+ <script src="backend/plugins/toastr/toastr.min.js"></script>
+ <script src="assets/myscript/alert.js"></script>
 
  <!-- DataTables -->
  <script src="/backend/plugins/datatables/jquery.dataTables.min.js"></script>
@@ -47,7 +50,7 @@
              "responsive": true,
              "autoWidth": false,
          })
-         
+
          bsCustomFileInput.init();
 
          function readURL(input) {

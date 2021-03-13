@@ -21,16 +21,12 @@
         <div class="row">
 
             <!-- PRODUK -->
-            <?php if (session()->getFlashdata('success_produk')) : ?>
-                <div class="alert alert-success" role="alert">
-                    <?= session()->getFlashdata('success_produk') ?>
-                </div>
-            <?php endif; ?>
-            
+            <div class="alert" data-alert="<?= session()->getFlashdata('success')?>"></div>            
+
             <div class="card col-lg-12">
                 <!-- /.card-header -->
                 <div class="card-header">
-                    <a href="/produk/tambah" class="btn btn-primary"> <i class="fas fa-cube"></i> Tambah Produk </a>
+                    <a href="/admin/produk/tambah" class="btn btn-primary"> <i class="fas fa-cube"></i> Tambah Produk </a>
                     <div class="btn-group ml-2">
                         <a href="#" class="btn btn-primary"> Laporan</a>
                         <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,12 +72,11 @@
                                     <td><?= $data['ukuran_produk']; ?></td>
                                     <td><?= ucwords($data['nama_promo']); ?></td>
                                     <td>
-                                        <a href="/produk/detail/<?= $data['id_prod']; ?>" class="btn btn-xs btn-secondary"> <i class="fa fa-eye"></i> </a>
-                                        <a href="/produk/edit/<?= $data['id_prod']; ?>" class="btn btn-xs btn-warning"> <i class="fa fa-edit"></i> </a>
-                                        <form action="/produk/hapus/<?= $data['id_prod']; ?>" method="POST" class="d-inline">
+                                        <a href="/admin/produk/detail/<?= $data['id_prod']; ?>" class="btn btn-xs btn-secondary"> <i class="fa fa-eye"></i> </a>
+                                        <a href="/admin/produk/edit/<?= $data['id_prod']; ?>" class="btn btn-xs btn-warning"> <i class="fa fa-edit"></i> </a>
+                                        <form action="/admin/produk/hapus/<?= $data['id_prod']; ?>" method="POST" class="d-inline">
                                             <?= csrf_field(); ?>
-                                            <!-- <input type="hidden" name="_method" value="delete"> -->
-                                            <button type="submit" class="btn btn-xs btn-danger" onclick="return confirm('Yakin hapus data?')"><i class="fa fa-trash"></i> </button>
+                                            <button type="submit" class="btn btn-xs btn-danger tombol-hapus"><i class="fa fa-trash"></i> </button>
                                         </form>
                                     </td>
                                 </tr>

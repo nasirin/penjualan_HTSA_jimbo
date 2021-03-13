@@ -28,7 +28,6 @@ class LoginController extends BaseController
       $data = [
         'id' => $user['id_user'],
         'username' => $user['nama_user'],
-        'level' => $user['level_user']
       ];
       session()->set($data);
       return redirect()->to('/admin');

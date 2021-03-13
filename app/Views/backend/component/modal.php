@@ -7,7 +7,7 @@
                 <h5 class="modal-title m-auto"> <i class="fa fa-building"></i> Tambah Department</h5>
             </div>
             <div class="modal-body">
-                <form role="form" method="post" action="/depart/simpan">
+                <form role="form" method="post" action="/department/simpan">
                     <?= csrf_field(); ?>
                     <div class="card-body">
                         <div class="form-group">
@@ -38,7 +38,7 @@
                     <h5 class="modal-title m-auto"> <i class="fa fa-building"></i> Ubah Department</h5>
                 </div>
                 <div class="modal-body">
-                    <form role="form" method="post" action="/depart/ubah/<?= $data['id_depart']; ?>">
+                    <form role="form" method="post" action="/department/ubah/<?= $data['id_depart']; ?>">
                         <?= csrf_field(); ?>
                         <input type="hidden" name="_method" value="PUT">
                         <div class="card-body">

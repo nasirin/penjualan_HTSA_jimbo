@@ -20,17 +20,7 @@
     <div class="container-fluid">
         <div class="row">
 
-            <div class="container-fluid">
-                <?php if (session()->getFlashdata('error')) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?= session()->getFlashdata('error') ?>
-                    </div>
-                <?php elseif (session()->getFlashdata('success')) : ?>
-                    <div class="alert alert-success" role="alert">
-                        <?= session()->getFlashdata('success') ?>
-                    </div>
-                <?php endif; ?>
-            </div>
+            <div class="alert" data-alert="<?= session()->getFlashdata('success') ?>"></div>
 
             <div class="card col-lg-12">
                 <!-- /.card-header -->
@@ -54,11 +44,7 @@
                                     <td><?= $data['nama_department']; ?></td>
                                     <td>
                                         <a href="#u-department<?= $data['id_depart']; ?>" data-toggle="modal" class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i> </a>
-                                        <form action="/depart/hapus/<?= $data['id_depart'] ?>" method="POST" class="d-inline">
-                                            <?= csrf_field(); ?>
-                                            <!-- <input type="hidden" name="_method" value="DELETE"> -->
-                                            <button class="btn btn-sm btn-danger" onclick="return confirm('Yakin Hapus Data?')"> <i class="fa fa-trash"></i></button>
-                                        </form>
+                                        <a href="/department/hapus/<?= $data['id_depart'] ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
