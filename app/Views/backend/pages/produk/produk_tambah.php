@@ -10,7 +10,7 @@
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
                     <li class="breadcrumb-item"> <a href="/admin/produk">Produk</a></li>
                     <li class="breadcrumb-item active">Form tambah produk</li>
                 </ol>
@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="/produk/simpan" method="POST" enctype="multipart/form-data">
+                <form action="/admin/produk/simpan" method="POST" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
                     <div class="form-group row">
                         <label for="id" class="col-sm-2 col-form-label">Kode Produk <small class="text-danger">*</small></label>

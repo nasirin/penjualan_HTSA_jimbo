@@ -31,7 +31,7 @@ class ProdukController extends BaseController
             'get' => $this->mproduk->get(),
         ];
 
-        return view('backend/pages/produk', $data);
+        return view('backend/pages/produk/produk', $data);
     }
 
     public function tambah()
@@ -45,7 +45,7 @@ class ProdukController extends BaseController
             'kode' => $this->mproduk->kode(),
             'promo' => $this->mpromo->findAll()
         ];
-        return view('backend/pages/produk_tambah', $data);
+        return view('backend/pages/produk/produk_tambah', $data);
     }
 
     public function edit($id)
@@ -59,7 +59,7 @@ class ProdukController extends BaseController
             'promo' => $this->mpromo->findAll(),
             'validasi' => \Config\Services::validation(),
         ];
-        return view('backend/pages/produk_ubah', $data);
+        return view('backend/pages/produk/produk_ubah', $data);
     }
 
     public function simpan()
@@ -108,7 +108,7 @@ class ProdukController extends BaseController
         // dd($gambar);
 
         $this->mproduk->simpan($input, $fileGambar);
-        session()->setFlashdata('success_produk', 'Data Berhasil Di Tambah');
+        session()->setFlashdata('success', 'Data Berhasil Di Tambah');
         return redirect()->to('/admin/produk');
     }
 
@@ -121,8 +121,8 @@ class ProdukController extends BaseController
 
         $this->mproduk->delete($id);
 
-        session()->setFlashdata('success_produk', 'Data berhasil di hapus');
-        return redirect()->to('/produk');
+        session()->setFlashdata('success', 'Data berhasil di hapus');
+        return redirect()->to('/admin/produk');
     }
 
     public function ubah($id)
@@ -174,7 +174,7 @@ class ProdukController extends BaseController
         }
 
         $this->mproduk->ubah($input, $insert);
-        session()->setFlashdata('success_produk', 'Data Berhasil Di ubah');
+        session()->setFlashdata('success', 'Data Berhasil Di ubah');
         return redirect()->to('/admin/produk');
     }
 
@@ -187,6 +187,6 @@ class ProdukController extends BaseController
             'department' => $this->mdepartment->findAll(),
             'produk' => $this->mproduk->get_data($id),
         ];
-        return view('backend/pages/produk_detail', $data);
+        return view('backend/pages/produk/produk_detail', $data);
     }
 }

@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="/produk/ubah/<?= $produk['id_prod'] ?>" method="POST" enctype="multipart/form-data">
+                <form action="/admin/produk/ubah/<?= $produk['id_prod'] ?>" method="POST" enctype="multipart/form-data">
                     <?= csrf_field(); ?>
                     <input type="hidden" name="gambarLama" value="<?= $produk['image_produk']; ?>">
                     <div class="form-group row">

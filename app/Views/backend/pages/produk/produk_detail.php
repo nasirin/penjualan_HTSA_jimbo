@@ -72,7 +72,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a href="/produk" class="btn btn-block btn-success">Back To Page</a>
+                <a href="/admin/produk" class="btn btn-block btn-success">Back To Page</a>
             </div>
         </div>
     </div>

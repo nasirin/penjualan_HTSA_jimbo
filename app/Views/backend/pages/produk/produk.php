@@ -74,10 +74,7 @@
                                     <td>
                                         <a href="/admin/produk/detail/<?= $data['id_prod']; ?>" class="btn btn-xs btn-secondary"> <i class="fa fa-eye"></i> </a>
                                         <a href="/admin/produk/edit/<?= $data['id_prod']; ?>" class="btn btn-xs btn-warning"> <i class="fa fa-edit"></i> </a>
-                                        <form action="/admin/produk/hapus/<?= $data['id_prod']; ?>" method="POST" class="d-inline">
-                                            <?= csrf_field(); ?>
-                                            <button type="submit" class="btn btn-xs btn-danger tombol-hapus"><i class="fa fa-trash"></i> </button>
-                                        </form>
+                                        <a href="/admin/produk/hapus/<?= $data['id_prod']; ?>" class="btn btn-xs btn-danger tombol-hapus"> <i class="fa fa-trash"></i> </a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>
