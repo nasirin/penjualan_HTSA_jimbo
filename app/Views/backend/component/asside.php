@@ -63,7 +63,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link" onclick="return confirm('apakah anda yakin?')">
+                    <a href="/user" class="nav-link <?= ($active == 'user') ? 'active' : '' ?>">
                         <i class="nav-icon fas fa-users"></i>
                         <p>
                             Users

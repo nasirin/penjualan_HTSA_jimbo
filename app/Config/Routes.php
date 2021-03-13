@@ -39,15 +39,24 @@ $routes->get('/admin', 'backend\Home', ['filter' => 'NotLogin']);
 
 // login
 $routes->group('auth', function ($routes) {
-	$routes->get('/', 'backend\LoginController',['filter' => 'IsLogin']);
-	$routes->post('login','backend\LoginController::login');
-	$routes->get('logout','backend\LoginController::logout');
+	$routes->get('/', 'backend\LoginController', ['filter' => 'IsLogin']);
+	$routes->post('login', 'backend\LoginController::login');
+	$routes->get('logout', 'backend\LoginController::logout');
 });
-// $routes->post('/admin/login','backend\LoginController::login');
-// $routes->get('/admin/logout','backend\LoginController::logout');
+
+// user
+$routes->group('user', ['filter' => 'NotLogin'], function ($routes) {
+	$routes->get('/', 'backend\userController');
+	$routes->get('tambah','backend\userController::tambah');
+	$routes->post('simpan','backend\userController::simpan');
+	$routes->get('ganti/(:any)','backend\userController::ganti/$1');
+	$routes->post('ubah/(:any)','backend\userController::ubah/$1');
+	$routes->get('hapus/(:any)','backend\userController::hapus/$1');
+
+});
 
 // pesanan
-$routes->group('pesanan',['filter'=>'NotLogin'],function($routes){
+$routes->group('pesanan', ['filter' => 'NotLogin'], function ($routes) {
 	$routes->get('/', 'backend\PesananController');
 	$routes->get('detail/(:any)', 'backend\PesananController::detail/$1');
 	$routes->get('invoice', 'backend\PesananController::show_invoice');
@@ -55,7 +64,7 @@ $routes->group('pesanan',['filter'=>'NotLogin'],function($routes){
 });
 
 // promo
-$routes->group('admin/promo',['filter'=>'NotLogin'],function($routes){
+$routes->group('admin/promo', ['filter' => 'NotLogin'], function ($routes) {
 	$routes->get('/', 'backend\PromoController');
 	$routes->get('tambah', 'backend\PromoController::tambah');
 	$routes->post('simpan', 'backend\PromoController::simpan');
@@ -66,7 +75,7 @@ $routes->group('admin/promo',['filter'=>'NotLogin'],function($routes){
 });
 
 // PRODUK
-$routes->group('admin/produk',['filter'=>'NotLogin'],function($routes){
+$routes->group('admin/produk', ['filter' => 'NotLogin'], function ($routes) {
 	$routes->get('/', 'backend\ProdukController');
 	$routes->get('tambah', 'backend\ProdukController::tambah');
 	$routes->post('simpan/', 'backend\ProdukController::simpan');
@@ -77,7 +86,7 @@ $routes->group('admin/produk',['filter'=>'NotLogin'],function($routes){
 });
 
 // DEPARTMENT
-$routes->group('department',['filter'=>'NotLogin'],function($routes){
+$routes->group('department', ['filter' => 'NotLogin'], function ($routes) {
 	$routes->get('/', 'backend\DepartmentController');
 	$routes->post('simpan/', 'backend\DepartmentController::simpan');
 	$routes->add('hapus/(:num)', 'backend\DepartmentController::hapus/$1');
