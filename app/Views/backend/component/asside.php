@@ -71,7 +71,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/auth/logout" class="nav-link" onclick="return confirm('apakah anda yakin?')">
+                    <a href="/auth/logout" class="nav-link tombol-keluar">
                         <i class="nav-icon fas fa-sign-out-alt"></i>
                         <p>
                             Logout

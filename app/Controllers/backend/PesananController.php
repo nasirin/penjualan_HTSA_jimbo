@@ -20,7 +20,7 @@ class PesananController extends BaseController
             'active' => "pesanan",
             'pesanan' => $this->mpesanan->get_all()
         ];
-        return view('backend/pages/pesanan', $data);
+        return view('backend/pages/pesanan/pesanan', $data);
     }
 
     public function detail($id)
@@ -32,7 +32,7 @@ class PesananController extends BaseController
             'pesanan' => $this->mpesanan->detail($id),
             'detail' => $this->mpesanan->get_detail($id),
         ];
-        return view('backend/pages/pesanan_detail', $data);
+        return view('backend/pages/pesanan/pesanan_detail', $data);
     }
     public function show_invoice()
     {
@@ -42,7 +42,7 @@ class PesananController extends BaseController
             'active' => "pesanan",
             // 'pesanan' => $this->mpesanan->detail()
         ];
-        return view('backend/pages/invoice', $data);
+        return view('backend/pages/pesanan/invoice', $data);
     }
 
     public function print()
@@ -53,6 +53,6 @@ class PesananController extends BaseController
             'active' => "pesanan",
             // 'pesanan' => $this->mpesanan->detail()
         ];
-        return view('backend/pages/invoice_print', $data);
+        return view('backend/pages/pesanan/invoice_print', $data);
     }
 }
