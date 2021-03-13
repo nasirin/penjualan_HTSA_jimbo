@@ -24,7 +24,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="/promo/simpan" method="POST">
+                <form action="/admin/promo/simpan" method="POST">
                     <?= csrf_field(); ?>
                     <div class="form-group row">
                         <label for="id" class="col-sm-2 col-form-label">Kode promo</label>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-sm-6 mb-2">
-                            <a href="/produk" class="btn btn-block btn-secondary">Cancel</a>
+                            <a href="/admin/promo" class="btn btn-block btn-secondary">Cancel</a>
                             <!-- <button type="button" class="btn btn-block btn-secondary">Cancel</button> -->
                         </div>
                         <div class="col-sm-6">

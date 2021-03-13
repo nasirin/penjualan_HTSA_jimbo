@@ -6,30 +6,24 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Form Tambah Produk</h1>
+                <h1 class="m-0 text-dark">Form Ubah Promo</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
-                    <li class="breadcrumb-item"> <a href="/admin/produk">Promo</a></li>
-                    <li class="breadcrumb-item active">Form tambah promo</li>
+                    <li class="breadcrumb-item"><a href="/admin">Home</a></li>
+                    <li class="breadcrumb-item"> <a href="/admin/promo">Promo</a></li>
+                    <li class="breadcrumb-item active">Form Ubah promo</li>
                 </ol>
             </div>
         </div>
     </div>
 </div>
-  <!-- promo -->
-  <?php if (session()->getFlashdata('error')) : ?>
-                <div class="alert alert-danger" role="alert">
-                    <?= session()->getFlashdata('error') ?>
-                </div>
-            <?php endif; ?>
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <form action="/promo/ubah/<?= $get['id_promo']; ?>" method="POST">
+                <form action="/admin/promo/ubah/<?= $get['id_promo']; ?>" method="POST">
                     <?= csrf_field(); ?>
                     <input type="hidden" name="created" value="<?= $get['created_at']; ?>">
                     <div class="form-group row">

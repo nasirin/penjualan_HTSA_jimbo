@@ -21,16 +21,12 @@
         <div class="row">
 
             <!-- promo -->
-            <?php if (session()->getFlashdata('success')) : ?>
-                <div class="alert alert-success" role="alert">
-                    <?= session()->getFlashdata('success') ?>
-                </div>
-            <?php endif; ?>
+            <div class="alert" data-alert="<?= session()->getFlashdata('success') ?>"></div>
 
             <div class="card col-lg-12">
                 <!-- /.card-header -->
                 <div class="card-header">
-                    <a href="/promo/tambah" class="btn btn-primary"> <i class="fas fa-tag"></i> Tambah Promo </a>
+                    <a href="/admin/promo/tambah" class="btn btn-primary"> <i class="fas fa-tag"></i> Tambah Promo </a>
                 </div>
                 <div class="card-body">
                     <table id="tbl-produk" class="table table-hover table-responsive-sm table-sm">
@@ -54,13 +50,9 @@
                                     <td><?= $data['potongan']; ?>%</td>
                                     <td><?= $data['status_promo']; ?></td>
                                     <td>
-                                        <a href="/promo/detail/<?= $data['id_promo']; ?>" class="btn btn-sm btn-secondary"> <i class="fa fa-eye"></i> </a>
-                                        <a href="/promo/edit/<?= $data['id_promo']; ?>" class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i> </a>
-                                        <form action="/promo/hapus/<?= $data['id_promo']; ?>" method="POST" class="d-inline">
-                                            <?= csrf_field(); ?>
-                                            <!-- <input type="hidden" name="_method" value="delete"> -->
-                                            <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Yakin hapus data?')"><i class="fa fa-trash"></i> </button>
-                                        </form>
+                                        <a href="/admin/promo/detail/<?= $data['id_promo']; ?>" class="btn btn-sm btn-secondary"> <i class="fa fa-eye"></i> </a>
+                                        <a href="/admin/promo/edit/<?= $data['id_promo']; ?>" class="btn btn-sm btn-warning"> <i class="fa fa-edit"></i></a>
+                                        <a href="/admin/promo/hapus/<?= $data['id_promo']; ?>" class="btn btn-sm btn-danger tombol-hapus"><i class="fa fa-trash"></i> </a>
                                     </td>
                                 </tr>
                             <?php endforeach; ?>

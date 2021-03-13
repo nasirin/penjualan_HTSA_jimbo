@@ -24,10 +24,10 @@
  <script src="/backend/dist/js/pages/dashboard2.js"></script>
 
  <!-- SweetAlert2 -->
- <script src="backend/plugins/sweetalert2/sweetalert2.min.js"></script>
+ <script src="/backend/plugins/sweetalert2/sweetalert2.min.js"></script>
  <!-- Toastr -->
- <script src="backend/plugins/toastr/toastr.min.js"></script>
- <script src="assets/myscript/alert.js"></script>
+ <script src="/backend/plugins/toastr/toastr.min.js"></script>
+ <script src="/assets/myscript/alert.js"></script>
 
  <!-- DataTables -->
  <script src="/backend/plugins/datatables/jquery.dataTables.min.js"></script>

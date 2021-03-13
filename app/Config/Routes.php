@@ -57,12 +57,12 @@ $routes->group('pesanan',['filter'=>'NotLogin'],function($routes){
 // promo
 $routes->group('admin/promo',['filter'=>'NotLogin'],function($routes){
 	$routes->get('/', 'backend\PromoController');
-	$routes->get('/promo/tambah', 'backend\PromoController::tambah');
-	$routes->post('/promo/simpan', 'backend\PromoController::simpan');
-	$routes->get('/promo/detail/(:any)', 'backend\PromoController::detail/$1');
-	$routes->get('/promo/edit/(:any)', 'backend\PromoController::edit/$1');
-	$routes->post('/promo/ubah/(:any)', 'backend\PromoController::ubah/$1');
-	$routes->post('/promo/hapus/(:any)', 'backend\PromoController::hapus/$1');
+	$routes->get('tambah', 'backend\PromoController::tambah');
+	$routes->post('simpan', 'backend\PromoController::simpan');
+	$routes->get('detail/(:any)', 'backend\PromoController::detail/$1');
+	$routes->get('edit/(:any)', 'backend\PromoController::edit/$1');
+	$routes->post('ubah/(:any)', 'backend\PromoController::ubah/$1');
+	$routes->get('hapus/(:any)', 'backend\PromoController::hapus/$1');
 });
 
 // PRODUK

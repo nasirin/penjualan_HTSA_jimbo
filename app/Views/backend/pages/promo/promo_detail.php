@@ -44,14 +44,12 @@
                     <tr>
                         <th colspan="2">Produk :</th>
                     </tr>
+                    <?php foreach($produk as $data):?>
                     <tr>
-                        <td>1</td>
-                        <td>produk 1</td>
+                        <td><?= $no++?></td>
+                        <td><?= $data['nama_produk']?></td>
                     </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>produk 2</td>
-                    </tr>
+                    <?php endforeach;?>                    
                 </table>
             </div>
             <div class="card-footer">
@@ -60,7 +58,7 @@
                         <a href="/admin/promo" class="btn btn-light">Back</a>
                     </div>
                     <div>
-                        <a href="/promo/edit/<?= $get['id_promo']; ?>" class="btn btn-warning">Edit</a>
+                        <a href="/admin/promo/edit/<?= $get['id_promo']; ?>" class="btn btn-warning">Edit</a>
                     </div>
                 </div>
             </div>

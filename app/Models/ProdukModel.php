@@ -112,4 +112,12 @@ class ProdukModel extends Model
         return $this->db->table('produk')->countAllResults();
         // ->get()->getRowArray();
     }
+
+    public function produkPromo($id)
+    {
+        return $this->db->table('produk')
+        ->join('promo','promo.id_promo = produk.id_promo','left')
+        ->where('promo.id_promo',$id)
+        ->get()->getResultArray();
+    }
 }

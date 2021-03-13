@@ -19,9 +19,9 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
     <!-- SweetAlert2 -->
-    <link rel="stylesheet" href="backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <link rel="stylesheet" href="/backend/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
     <!-- Toastr -->
-    <link rel="stylesheet" href="backend/plugins/toastr/toastr.min.css">
+    <link rel="stylesheet" href="/backend/plugins/toastr/toastr.min.css">
     
     <!-- DataTables -->
     <link rel="stylesheet" href="/backend/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">

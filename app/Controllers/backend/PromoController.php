@@ -3,16 +3,19 @@
 namespace App\Controllers\backend;
 
 use App\Controllers\BaseController;
+use App\Models\ProdukModel;
 use App\Models\PromoModel;
 
 class PromoController extends BaseController
 {
 
     protected $mprommo;
+    protected $mproduk;
 
     public function __construct()
     {
         $this->mprommo = new PromoModel();
+        $this->mproduk = new ProdukModel();
     }
 
     public function index()
@@ -27,7 +30,7 @@ class PromoController extends BaseController
             // 'get' => $this->mproduk->get(),
         ];
 
-        return view('backend/pages/promo', $data);
+        return view('backend/pages/promo/promo', $data);
     }
 
     public function tambah()
@@ -42,7 +45,7 @@ class PromoController extends BaseController
             'kode' => $this->mprommo->kode(),
         ];
 
-        return view('backend/pages/promo_tambah', $data);
+        return view('backend/pages/promo/promo_tambah', $data);
     }
 
     public function simpan()
@@ -72,7 +75,7 @@ class PromoController extends BaseController
         $post = $this->request->getVar();
 
         $this->mprommo->simpan($post,);
-        session()->setFlashdata('success_produk', 'Data Berhasil Di Tambah');
+        session()->setFlashdata('success', 'Data Berhasil Di Tambah');
         return redirect()->to('/admin/promo');
     }
 
@@ -85,8 +88,10 @@ class PromoController extends BaseController
             // 'department' => $this->mdepartment->findAll(),
             'validasi' => \Config\Services::validation(),
             'get' => $this->mprommo->find($id),
+            'produk' => $this->mproduk->produkPromo($id),
+            'no'=>1,
         ];
-        return view('backend/pages/promo_detail', $data);
+        return view('backend/pages/promo/promo_detail', $data);
     }
 
     public function edit($id)
@@ -98,7 +103,7 @@ class PromoController extends BaseController
             'validasi' => \Config\Services::validation(),
             'get' => $this->mprommo->find($id),
         ];
-        return view('backend/pages/promo_ubah', $data);
+        return view('backend/pages/promo/promo_ubah', $data);
     }
 
     public function ubah($id)
