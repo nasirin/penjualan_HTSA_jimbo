@@ -2,7 +2,7 @@
     <div class="col-lg-12 col-md-7">
         <div class="product__discount">
             <div class="section-title product__discount__title">
-                <h4>Promo Diskon %</h4>
+                <h4>Promo Diskon </h4>
             </div>
             <div class="row">
                 <div class="product__discount__slider owl-carousel">

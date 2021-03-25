@@ -1,7 +1,7 @@
 <?= $this->extend('frontend/layout/home'); ?>
 
 <?= $this->section('content'); ?>
-<?= $this->include('frontend/component/header2'); ?>
+<?= $this->include('frontend/component/header'); ?>
 <!-- Product Details Section Begin -->
 <section class="product-details spad">
     <div class="container">

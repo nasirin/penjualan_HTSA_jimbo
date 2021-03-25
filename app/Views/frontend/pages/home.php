@@ -12,7 +12,7 @@
                         <h4>Department</h4>
                         <ul>
                             <?php foreach ($department as $data) : ?>
-                                <li><a href="<?= $data['id_depart']?>"><?= ucwords($data['nama_department']); ?></a></li>
+                                <li><a href="#"><?= ucwords($data['nama_department']); ?></a></li>
                             <?php endforeach; ?>
                         </ul>
                     </div>

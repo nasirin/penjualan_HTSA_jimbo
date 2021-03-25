@@ -116,8 +116,17 @@ class ProdukModel extends Model
     public function produkPromo($id)
     {
         return $this->db->table('produk')
-        ->join('promo','promo.id_promo = produk.id_promo','left')
-        ->where('promo.id_promo',$id)
-        ->get()->getResultArray();
+            ->join('promo', 'promo.id_promo = produk.id_promo', 'left')
+            ->where('promo.id_promo', $id)
+            ->get()->getResultArray();
+    }
+
+    public function getNonPromo()
+    {
+        return $this->db->table('produk')
+            ->join('promo', 'promo.id_promo = produk.id_promo', 'left')
+            ->join('department', 'department.id_depart = produk.id_department', 'left')
+            ->where('promo.id_promo', null)
+            ->get()->getResultArray();
     }
 }

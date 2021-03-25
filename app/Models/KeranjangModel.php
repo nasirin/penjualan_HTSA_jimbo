@@ -8,17 +8,23 @@ class KeranjangModel extends Model
 {
     protected $table = 'keranjang';
     protected $primaryKey = 'id_ker';
-    protected $allowedFields = ['id_pelanggan', 'id_produk', 'varian_pesanan', 'qty', 'created_at', 'updated_at'];
+    protected $allowedFields = ['id_pelanggan', 'created_at', 'updated_at'];
     protected $useTimestamps = false;
 
     public function get()
     {
         return $this->db->table('keranjang')
             ->join('pelanggan', 'pelanggan.id_pel = keranjang.id_pelanggan', 'left')
-            ->join('produk', 'produk.id_prod = keranjang.id_produk', 'left')
-            ->join('promo', 'promo.id_promo = keranjang.id_promo', 'left')
             ->where('id_pelanggan', session()->get('id'))
             ->get()->getResultArray();
+    }
+
+    public function cekPel($id)
+    {
+        return $this->db->table('keranjang')
+            ->join('pelanggan', 'pelanggan.id_pel = keranjang.id_pelanggan', 'left')
+            ->where('id_pelanggan', $id)
+            ->get()->getRowArray();
     }
 
     public function get_qty($post)
@@ -32,10 +38,6 @@ class KeranjangModel extends Model
     {
         $data = [
             'id_pelanggan' => $post['idPel'],
-            'id_produk' => $post['idProduk'],
-            'id_promo' => $post['promo'],
-            'qty' => $post['qty'],
-            'subtotal_keranjang' => $post['total'],
             'created_at' => date('ymd')
         ];
 
@@ -59,17 +61,5 @@ class KeranjangModel extends Model
         return $this->db->table('keranjang')
             ->where('id_ker', $cek['id_ker'])
             ->update($data);
-    }
-
-    public function total_keranjang()
-    {
-        return $this->db->table('keranjang')
-            ->where('id_pelanggan', session()->get('id'));
-    }
-
-    public function subtotal()
-    {
-        return $this->db->table('keranjang')
-            ->selectSum('subtotal_keranjang')->get()->getRowArray();
     }
 }

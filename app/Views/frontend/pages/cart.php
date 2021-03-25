@@ -35,7 +35,7 @@
                                         <td class="shoping__cart__quantity">
                                             <div class="quantity">
                                                 <div class="pro-qty">
-                                                    <input type="text" value="<?= $data['qty']; ?>">
+                                                    <input type="text" value="<?= $data['qty_keranjang']; ?>">
                                                 </div>
                                             </div>
                                         </td>

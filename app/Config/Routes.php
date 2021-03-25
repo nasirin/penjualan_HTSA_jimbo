@@ -47,12 +47,11 @@ $routes->group('auth', function ($routes) {
 // user
 $routes->group('user', ['filter' => 'NotLogin'], function ($routes) {
 	$routes->get('/', 'backend\userController');
-	$routes->get('tambah','backend\userController::tambah');
-	$routes->post('simpan','backend\userController::simpan');
-	$routes->get('ganti/(:any)','backend\userController::ganti/$1');
-	$routes->post('ubah/(:any)','backend\userController::ubah/$1');
-	$routes->get('hapus/(:any)','backend\userController::hapus/$1');
-
+	$routes->get('tambah', 'backend\userController::tambah');
+	$routes->post('simpan', 'backend\userController::simpan');
+	$routes->get('ganti/(:any)', 'backend\userController::ganti/$1');
+	$routes->post('ubah/(:any)', 'backend\userController::ubah/$1');
+	$routes->get('hapus/(:any)', 'backend\userController::hapus/$1');
 });
 
 // pesanan
@@ -113,6 +112,10 @@ $routes->get('/cart', 'Keranjang');
 $routes->post('/tambah/(:any)', 'Keranjang::tambah/$1');
 $routes->post('/hapus/(:any)', 'Keranjang::hapus/$1');
 
+// buy now
+$routes->group('buy', function ($routes) {
+	$routes->get('/', 'BuyNowController');
+});
 // profil
 $routes->get('/profil', 'Profil');
 

@@ -2,15 +2,21 @@
 
 namespace App\Controllers;
 
+use App\Models\KeranjangDetailModel;
 use App\Models\KeranjangModel;
+use App\Models\ProdukModel;
 
 class Keranjang extends BaseController
 {
     protected $mkeranjang;
+    protected $mdetailkeranjang;
+    protected $produk;
 
     public function __construct()
     {
         $this->mkeranjang = new KeranjangModel();
+        $this->mdetailkeranjang = new KeranjangDetailModel();
+        $this->produk = new ProdukModel();
     }
 
     public function index()
@@ -20,9 +26,9 @@ class Keranjang extends BaseController
         }
 
         $data = [
-            'keranjang' => $this->mkeranjang->get(),
-            'total_keranjang' => $this->mkeranjang->total_keranjang()->countAllResults(),
-            'subtotal' => $this->mkeranjang->subtotal()
+            'keranjang' => $this->mdetailkeranjang->keranjang(session('id')),
+            'total_keranjang' => $this->mdetailkeranjang->total_keranjang(),
+            'subtotal' => $this->mdetailkeranjang->subtotal()
         ];
         return view('frontend/pages/cart', $data);
     }
@@ -34,18 +40,29 @@ class Keranjang extends BaseController
         }
 
         $post = $this->request->getVar();
-        // $keranjang = $this->mkeranjang->findAll();
-        $keranjang = $this->mkeranjang->get_qty($post);
 
-        if ($keranjang['id_produk'] == $post['idProduk']) {
-            // update qty
-            $this->mkeranjang->tambah_qty($post);
-            return redirect()->to('/');
+        $cekpel = $this->mkeranjang->cekPel(session('id'));
+        $cekproduk = $this->mdetailkeranjang->cekProd($post['idProduk']);
+        // dd($cekproduk);
+
+
+        if ($cekpel) {
+            if ($cekproduk) {
+                $getProduk = $this->produk->get_data($post['idProduk']);
+                // dd($getProduk);
+                $this->mdetailkeranjang->stockin($post, $cekproduk, $getProduk);
+            } else {
+                $getProduk = $this->produk->get_data($post['idProduk']);
+                $this->mdetailkeranjang->simpan($post, $cekpel, $getProduk);
+            }
         } else {
-            // insert data baru
             $this->mkeranjang->tambah($post);
-            return redirect()->to('/');
+            $cekpel = $this->mkeranjang->cekPel(session('id'));
+            $getProduk = $this->produk->get_data($post['idProduk']);
+            $this->mdetailkeranjang->simpan($post, $cekpel, $getProduk);
         }
+
+        return redirect()->to('/');
     }
 
     public function hapus($id)
