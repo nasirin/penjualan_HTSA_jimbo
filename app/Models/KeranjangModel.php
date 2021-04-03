@@ -62,4 +62,9 @@ class KeranjangModel extends Model
             ->where('id_ker', $cek['id_ker'])
             ->update($data);
     }
+
+    public function hapus()
+    {
+        $this->db->table($this->table)->where('id_pelanggan', session('id'))->delete();
+    }
 }

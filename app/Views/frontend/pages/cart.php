@@ -96,10 +96,16 @@
                         <form action="/checkout" method="POST">
                             <?= csrf_field(); ?>
                             <input type="hidden" name="idPel" value="<?= session()->get('id'); ?>">
-                            <input type="hidden" name="idProduk" id="">
-                            <input type="hidden" name="qty" id="">
-                            <input type="hidden" name="total" id="">
-                            <button class="btn btn-success btn-block rounded-0">PROCEED TO CHECKOUT</button>
+                            <input type="hidden" name="totalBayar" value="<?= $subtotal['subtotal_keranjang']; ?>">
+                            <?php foreach ($keranjang as $data) : ?>
+                                <input type="hidden" name="idKeranjang" value="<?= $data['id_keranjang']; ?>">
+
+                                <input type="hidden" name="idProduk[]" value="<?= $data['id_produk'] ?>">
+                                <input type="hidden" name="qty[]" value="<?= $data['qty_keranjang'] ?>">
+
+                            <?php endforeach; ?>
+
+                            <button type="submit" class="btn btn-success btn-block rounded-0">PROCEED TO CHECKOUT</button>
                         </form>
                     <?php else : ?>
 

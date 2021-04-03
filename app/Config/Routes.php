@@ -105,7 +105,7 @@ $routes->post('/register', 'Auth::register');
 $routes->get('/detail/(:any)', 'Produk/$1');
 $routes->get('/konfirmasi', 'Produk::konfirmasi');
 $routes->get('/produk', 'Produk::produk');
-$routes->get('/checkout', 'Produk::checkout');
+$routes->post('/checkout', 'Produk::checkout');
 
 // cart
 $routes->get('/cart', 'Keranjang');

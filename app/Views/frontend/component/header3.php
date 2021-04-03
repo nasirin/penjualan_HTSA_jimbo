@@ -31,7 +31,7 @@
     <div class="container">
         <div class="row">
             <div class="header__logo m-auto">
-                <a href="/"><img src="frontend/img/logo.png" alt="LOGO"></a>
+                <a href="/"><img src="/frontend/img/logo.png" alt="LOGO"></a>
             </div>
         </div>
         <div class="humberger__open">

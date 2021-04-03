@@ -24,9 +24,11 @@ class Keranjang extends BaseController
         if (session()->get('username') == '') {
             return redirect()->to('/login');
         }
-
+        // $keranjang = $this->mdetailkeranjang->keranjang(session('id'));
+        // dd($keranjang);
         $data = [
             'keranjang' => $this->mdetailkeranjang->keranjang(session('id')),
+            'total' => $this->mdetailkeranjang->total_keranjang(session('id')),
             'total_keranjang' => $this->mdetailkeranjang->total_keranjang(),
             'subtotal' => $this->mdetailkeranjang->subtotal()
         ];
