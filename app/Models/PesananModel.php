@@ -6,6 +6,10 @@ use CodeIgniter\Model;
 
 class PesananModel extends Model
 {
+    protected $table = 'pesanan';
+    protected $primaryKey = 'id_pes';
+    protected $allowedFields = ['id_pes', 'id_pelanggan', 'total_pesanan', 'status_pesanan', 'img_pesanan', 'keterangan_pesanan', 'updated_at'];
+
     public function kode()
     {
         $code = $this->db->query("SELECT MAX(RIGHT(id_pes,3)) AS kd From pesanan");
@@ -24,8 +28,6 @@ class PesananModel extends Model
     public function get_all()
     {
         return $this->db->table('pesanan')
-            // ->join('keranjang','keranjang.id_ker = pesanan.id_keranjang','left')
-            // ->join('produk','produk.id_prod = pesanan.id_produk','left')
             ->join('pelanggan', 'pelanggan.id_pel = pesanan.id_pelanggan', 'left')
             ->get()->getResultArray();
     }
@@ -83,5 +85,11 @@ class PesananModel extends Model
         ];
 
         $this->db->table('pesanan')->insert($data);
+    }
+
+    public function batal($id)
+    {
+        $data = ['status_pesanan' => 'batal'];
+        $this->update([$this->primaryKey, $id], $data);
     }
 }

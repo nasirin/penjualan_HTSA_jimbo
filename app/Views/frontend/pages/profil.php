@@ -1,3 +1,7 @@
+<?php
+
+use App\Database\Migrations\Pelanggan;
+?>
 <?= $this->extend('frontend/layout/home'); ?>
 <?= $this->section('content'); ?>
 <?= $this->include('frontend/component/header4'); ?>
@@ -10,24 +14,24 @@
                 <div class="card card-success card-outline">
                     <div class="card-body box-profile">
                         <div class="text-center">
-                            <img class="profile-user-img img-fluid img-circle" src="backend/dist/img/user4-128x128.jpg" alt="User profile picture">
+                            <img class="profile-user-img img-fluid img-circle" src="/backend/dist/img/user4-128x128.jpg" alt="User profile picture">
                         </div>
 
-                        <h3 class="profile-username text-center">Nina Mcintire</h3>
+                        <h3 class="profile-username text-center"><?= $pelanggan['nama'] ?></h3>
 
-                        <p class="text-muted text-center">id pelanggan</p>
+                        <p class="text-muted text-center"><?= session('id') ?></p>
 
                         <ul class="list-group list-group-unbordered mb-3">
                             <li class="list-group-item">
-                                <b>Email</b> <a class="float-right">1,322</a>
+                                <b>Email</b> <a class="float-right"><?= $pelanggan['email'] ?></a>
                             </li>
                             <li class="list-group-item">
-                                <b>No. Telepon</b> <a class="float-right">543</a>
+                                <b>No. Telepon</b> <a class="float-right"><?= $pelanggan['notelp'] ?></a>
                             </li>
                             <li class="list-group-item">
                                 <strong>Alamat</strong>
 
-                                <p class="text-muted text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
+                                <p class="text-muted text-justify"><?= $pelanggan['alamat'] ?></p>
                             </li>
                         </ul>
 
@@ -47,78 +51,86 @@
                     <div class="card-body">
                         <div class="tab-content">
                             <div class="active tab-pane" id="activity">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <div class="row justify-content-between">
-                                            <div class="card-title">
-                                                <h4>Kode Invoice</h4>
+                                <?php if ($pesananHead) : ?>
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <div class="row justify-content-between">
+                                                <div class="card-title">
+                                                    <h4><?= $pesananHead['id_pesanan'] ?></h4>
+                                                </div>
+                                                <div>
+                                                    <p><?= $pesananHead['created_at'] ?></p>
+                                                </div>
                                             </div>
-                                            <div>
-                                                <p>tgl pemesanan</p>
+                                        </div>
+                                        <div class="card-body">
+                                            <table class="table">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Produk</th>
+                                                        <th>Harga</th>
+                                                        <th>Jumlah</th>
+                                                        <th>Total</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php foreach ($pesananBody as $data) : ?>
+                                                        <tr>
+                                                            <td><?= $data['nama_produk'] ?></td>
+                                                            <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
+                                                            <td><?= $data['qty_pesanan'] ?></td>
+                                                            <td><?= 'Rp ' . number_format($data['harga_produk'] * $data['qty_pesanan'], 0, ',', '.') ?></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="card-footer">
+                                            <div class="row justify-content-between">
+                                                <a href="/pesanan/invoice/<?= $pesananHead['id_pesanan'] ?>" target="_blank" class="btn btn-success">Cetak Invoice</a>
+                                                <a href="/pesanan/konfirmasi/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-success">Konfirmasi</a>
+                                                <a href="/pesanan/batal/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-danger">Batal</a>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>
-                                                    <th>Produk</th>
-                                                    <th>Harga</th>
-                                                    <th>Jumlah</th>
-                                                    <th>Total</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>produk 1</td>
-                                                    <td>Rp.12.000</td>
-                                                    <td>2</td>
-                                                    <td>Rp.24.000</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
+                                <?php else : ?>
+                                    <div class="card">
+                                        <p class="text-center">Anda Belum Memiliki Pesanan Aktif</p>
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="row justify-content-between">
-                                            <a href="" class="btn btn-success">Cetak Invoice</a>
-                                            <a href="" class="btn btn-success">Konfirmasi</a>
-                                            <a href="" class="btn btn-danger">batal</a>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php endif; ?>
                             </div>
                             <!-- /.tab-pane -->
 
                             <div class="tab-pane" id="settings">
-                                <form class="form-horizontal">
-                                    <div class="form-group row">
-                                        <label for="inputName" class="col-sm-2 col-form-label">Name</label>
-                                        <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputName" placeholder="Name">
-                                        </div>
-                                    </div>
+                                <form class="form-horizontal" action="/profil/ubah/<?= session('id') ?>" method="post">
                                     <div class="form-group row">
                                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                                            <input type="email" class="form-control" name="email" id="inputEmail" placeholder="Email" value="<?= $pelanggan['email'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
                                         <label for="inputName2" class="col-sm-2 col-form-label">Name</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputName2" placeholder="Name">
+                                            <input type="text" class="form-control" id="inputName2" name="nama" placeholder="Name" value="<?= $pelanggan['nama'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+                                        <label for="inputName2" class="col-sm-2 col-form-label">Password</label>
                                         <div class="col-sm-10">
-                                            <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
+                                            <input type="text" class="form-control" id="inputName2" name="password" placeholder="Password">
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+                                        <label for="inputExperience" class="col-sm-2 col-form-label">Telepon</label>
                                         <div class="col-sm-10">
-                                            <input type="text" class="form-control" id="inputSkills" placeholder="Skills">
+                                            <input type="text" class="form-control" id="inputName2" name="notelp" value="<?= $pelanggan['notelp'] ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="inputSkills" class="col-sm-2 col-form-label">Alamat</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputSkills" name="alamat" value="<?= $pelanggan['alamat'] ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">

@@ -116,8 +116,15 @@ $routes->post('/hapus/(:any)', 'Keranjang::hapus/$1');
 $routes->group('buy', function ($routes) {
 	$routes->get('/', 'BuyNowController');
 });
+
 // profil
 $routes->get('/profil', 'Profil');
+$routes->post('/profil/ubah/(:any)', 'Profil::ubah/$1');
+
+// pesanan
+$routes->post('/pesanan/batal/(:any)', 'Pesanan::batal/$1');
+$routes->post('/pesanan/konfirmasi/(:any)', 'Pesanan::konfirmasi/$1');
+$routes->post('/pesanan/invoice/(:any)', 'Pesanan::invoice/$1');
 
 
 /**
