@@ -101,6 +101,7 @@
                                 <input type="hidden" name="idKeranjang" value="<?= $data['id_keranjang']; ?>">
 
                                 <input type="hidden" name="idProduk[]" value="<?= $data['id_produk'] ?>">
+                                <input type="hidden" name="idPromo[]" value="<?= $data['id_promo'] ?>">
                                 <input type="hidden" name="qty[]" value="<?= $data['qty_keranjang'] ?>">
 
                             <?php endforeach; ?>

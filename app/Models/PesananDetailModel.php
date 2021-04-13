@@ -8,7 +8,7 @@ class PesananDetailModel extends Model
 {
     protected $table = 'pesanan_detail';
     protected $primary = 'id_det';
-    protected $allowedFields = ['id_pesanan', 'id_pelanggan', 'id_produk', 'qty_pesanan', 'created_at'];
+    protected $allowedFields = ['id_pesanan', 'id_pelanggan', 'id_promo', 'id_produk', 'qty_pesanan', 'created_at'];
 
     public function getHead()
     {
@@ -37,6 +37,7 @@ class PesananDetailModel extends Model
                 'id_pesanan' => $getlastpesanan['id_pes'],
                 'id_pelanggan' => session('id'),
                 'id_produk' => $post['idProduk'][$i],
+                'id_promo' => $post['idPromo'][$i],
                 'qty_pesanan' => $post['qty'][$i],
             ]);
         }

@@ -75,6 +75,7 @@
                                 <th>Qty</th>
                                 <th>Produk</th>
                                 <th>Harga</th>
+                                <th>Diskon</th>
                                 <th>Total</th>
                             </tr>
                         </thead>
@@ -83,6 +84,7 @@
                                 <tr>
                                     <td><?= $data['qty_pesanan'] ?></td>
                                     <td><?= $data['nama_produk'] ?></td>
+                                    <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
                                     <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
                                     <td><?= 'Rp ' . number_format($data['qty_pesanan'] * $data['harga_produk'], 0, ',', '.') ?></td>
                                 </tr>

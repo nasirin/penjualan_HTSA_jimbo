@@ -34,7 +34,7 @@ class Profil extends BaseController
 
     public function ubah($id)
     {
-        $post = $this->request->getVar();
+        $post = $this->request->getPost();
         // dd($post);
         $pelanggan = $this->pelanggan->find(session('id'));
         $this->pelanggan->ubah($post, $id, $pelanggan);
