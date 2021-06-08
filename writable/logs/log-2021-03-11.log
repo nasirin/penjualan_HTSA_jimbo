@@ -1,0 +1,11 @@
+CRITICAL - 2021-03-11 22:22:54 --> Unable to connect to the database.
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1860): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Model.php(462): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Home.php(26): CodeIgniter\Model->findAll()
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Home->index()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}

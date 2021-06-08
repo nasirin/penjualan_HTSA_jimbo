@@ -1,0 +1,253 @@
+CRITICAL - 2021-04-03 22:22:05 --> Call to undefined method App\Models\KeranjangModel::total_keranjang
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(38): CodeIgniter\Model->__call('total_keranjang', Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('produk-3')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-04-03 22:23:49 --> Call to a member function countAllResults() on int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('produk-3')
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#5 {main}
+CRITICAL - 2021-04-03 22:24:06 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('backend', 'plugins', 'bootstrap', 'js', 'bootstrap.bundl...')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:24:06 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('backend', 'dist', 'js', 'adminlte.min.js')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:24:06 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('backend', 'dist', 'js', 'demo.js')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:24:07 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('frontend', 'img', 'logo.png')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:24:07 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('backend', 'plugins', 'bootstrap', 'js', 'bootstrap.bundl...')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:24:07 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('backend', 'dist', 'js', 'adminlte.min.js')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:24:07 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\detail.php(12): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 12, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(41): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->index('backend', 'dist', 'js', 'demo.js')
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:27:23 --> Undefined index: totalBiaya
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananModel.php(65): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 65, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(65): App\Models\PesananModel->simpan(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 22:27:55 --> Allowed fields must be specified for model: App\Models\PesananModel
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Model.php(1265): CodeIgniter\Database\Exceptions\DataException::forInvalidAllowedFields('App\\Models\\Pesa...')
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Model.php(735): CodeIgniter\Model->doProtectFields(Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananModel.php(69): CodeIgniter\Model->insert(Array)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(65): App\Models\PesananModel->simpan(Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 22:43:54 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 19, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 22:46:33 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 20, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:28:19 --> Illegal string offset 'id_produk'
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\Users\\Bon ca...', 19, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:29:31 --> Illegal string offset 'id_produk'
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(19): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\Users\\Bon ca...', 19, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:31:01 --> Array to string conversion
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', 'C:\\Users\\Bon ca...', 67, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-04-03 23:31:17 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 19, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:39:48 --> array_keys() expects parameter 1 to be array, string given
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'array_keys() ex...', 'C:\\Users\\Bon ca...', 2144, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2144): array_keys('INV-0421-002')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(2074): CodeIgniter\Database\BaseBuilder->setInsertBatch(Array, '', true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Model.php(801): CodeIgniter\Database\BaseBuilder->insertBatch(Array, NULL, 100)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(32): CodeIgniter\Model->insertBatch(Array)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#10 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#11 {main}
+CRITICAL - 2021-04-03 23:41:10 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(19): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 19, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:44:09 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 20, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:45:56 --> Undefined index: qty_pesanan
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\cart.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 103, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Keranjang.php(35): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Keranjang->index()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Keranjang))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 23:46:11 --> Undefined index: qty_pesanan
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Views\frontend\pages\cart.php(103): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 103, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\View\View.php(246): include('C:\\Users\\Bon ca...')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Common.php(1119): CodeIgniter\View\View->render('frontend/pages/...', Array, true)
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Keranjang.php(35): view('frontend/pages/...', Array)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Keranjang->index()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Keranjang))
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#9 {main}
+CRITICAL - 2021-04-03 23:46:36 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 20, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:51:39 --> Undefined index: PRO-0321-001
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(73): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', 'C:\\Users\\Bon ca...', 73, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-04-03 23:57:21 --> Illegal offset type
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(20): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal offset ...', 'C:\\Users\\Bon ca...', 20, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-04-03 23:59:34 --> Trying to access array offset on value of type int
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\PesananDetailModel.php(17): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 17, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Produk.php(67): App\Models\PesananDetailModel->simpan(Array, Array, Array)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(918): App\Controllers\Produk->checkout()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(404): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Produk))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(312): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(34): require_once('C:\\Users\\Bon ca...')
+#7 {main}
