@@ -6,7 +6,7 @@
                     <div class="header__top__left">
                         <ul>
                             <li><i class="fas fa-envelope"></i> HTSA@gmail.com</li>
-                            <li>08xx-xxxx-xxxx</li>
+                            <li>0813-2666-8521</li>
                         </ul>
                     </div>
                 </div>
@@ -20,7 +20,7 @@
                             <?php if (session()->get('username')) : ?>
                                 <a href="/profil"><i class="fa fa-user"></i> <?= ucwords(session()->get('username')); ?></a>
                             <?php else : ?>
-                                <a href="login"><i class="fa fa-user"></i> Login</a>
+                                <a href="/login"><i class="fa fa-user"></i> Login</a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="/"><img src="/frontend/img/logo.png" alt="LOGO"></a>
+                    <a href="/"><img src="/img/logo.jpg" width="100" alt="LOGO"></a>
                 </div>
             </div>
             <div class="col-lg-7">

@@ -1,6 +1,6 @@
 <div class="humberger__menu__wrapper">
     <div class="humberger__menu__logo">
-        <a href="frontend/#"><img src="frontend/img/logo.png" alt=""></a>
+        <a href="/"><img src="/img/logo.jpg" width="100" alt=""></a>
     </div>
     <div class="humberger__menu__cart">
         <ul>

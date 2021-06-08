@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="header__logo">
-                    <a href="/"><img src="frontend/img/logo.png" alt="LOGO"></a>
+                    <a href="/"><img src="/img/logo.jpg" alt="LOGO"></a>
                 </div>
             </div>
             <div class="col-lg-6">

@@ -33,11 +33,7 @@
                                             <?php endif; ?>
                                         </td>
                                         <td class="shoping__cart__quantity">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <input type="text" value="<?= $data['qty_keranjang']; ?>">
-                                                </div>
-                                            </div>
+                                            <?= $data['qty_keranjang']; ?>
                                         </td>
                                         <td class="shoping__cart__total">
                                             Rp. <?= number_format($data['subtotal_keranjang'], 0, ',', '.'); ?>

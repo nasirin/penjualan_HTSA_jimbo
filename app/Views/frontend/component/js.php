@@ -8,11 +8,11 @@
 <script src="/frontend/js/owl.carousel.min.js"></script>
 <script src="/frontend/js/main.js"></script>
 <!-- Bootstrap 4 -->
-<script src="backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="backend/dist/js/adminlte.min.js"></script>
+<script src="/backend/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="backend/dist/js/demo.js"></script>
+<script src="/backend/dist/js/demo.js"></script>
 
 </body>
 

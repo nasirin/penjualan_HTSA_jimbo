@@ -5,12 +5,12 @@
             <div class="col-lg-12">
                 <div class="footer__about justify-content-center">
                     <div class="footer__about__logo ">
-                        <a href="frontend/./index.html"><img src="frontend/img/logo.png" alt=""></a>
+                        <a href="frontend/./index.html"><img src="/img/logo.jpg" width="100" alt=""></a>
                     </div>
                     <ul>
-                        <li>Address: 60-49 Road 11378 New York</li>
-                        <li>Phone: +65 11.188.888</li>
-                        <li>Email: hello@colorlib.com</li>
+                        <li>Address: Jl. Untung Suropati No.12, Bambankerep, Kec. Ngaliyan, Kota Semarang</li>
+                        <li>Phone: +6281326668521</li>
+                        <li>Email: htsa@gmail.com</li>
                     </ul>
                 </div>
             </div>

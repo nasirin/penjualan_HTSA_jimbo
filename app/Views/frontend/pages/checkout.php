@@ -1,10 +1,10 @@
 <a href="/">
-    <img src="img/logo.png" alt="Colorlib logo"></a>
+    <img src="/img/logo.png" alt="Colorlib logo"></a>
 <h1 style="text-align:center;">Terimakasih atas kepercayaan anda kepada kami</h1>
 <p style="text-align:center;">Silahkan lakukan pembayaran dan konfirmasi pembayaran anda pada link dibawah ini: <strong>
         <br> <a href="/konfirmasi">Konfirmasi pembayaran</a></strong>.</p>
 <p style="text-align:center;">Untuk melihat invoice anda bisa kunjungi link di bawah ini: <strong>
-        <br> <a href="#">Invoice</a></strong>.</p>
+        <br> <a href="/pesanan/invoice/">Invoice</a></strong>.</p>
 <p style="text-align:center; margin-top:10px;"><strong>
         <br> <a href="/">Kembali belanja</a></strong>.</p>
 <br>
