@@ -13,7 +13,6 @@
                                 <th class="shoping__product">Products</th>
                                 <th>Price</th>
                                 <th>Quantity</th>
-                                <th>Total</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -34,9 +33,6 @@
                                         </td>
                                         <td class="shoping__cart__quantity">
                                             <?= $data['qty_keranjang']; ?>
-                                        </td>
-                                        <td class="shoping__cart__total">
-                                            Rp. <?= number_format($data['subtotal_keranjang'], 0, ',', '.'); ?>
                                         </td>
                                         <td class="shoping__cart__item__close">
                                             <form action="/hapus/<?= $data['id_ker']; ?>" method="POST">

@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => '57109383cad58265a61540362f313ecdb0b1f127',
+    'reference' => '6a61d8aa3f09a134e8ffc772124b6e5e56a734d2',
     'name' => 'codeigniter4/appstarter',
   ),
   'versions' => 
@@ -18,7 +18,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '57109383cad58265a61540362f313ecdb0b1f127',
+      'reference' => '6a61d8aa3f09a134e8ffc772124b6e5e56a734d2',
     ),
     'codeigniter4/framework' => 
     array (
@@ -59,21 +59,21 @@
     ),
     'laminas/laminas-escaper' => 
     array (
-      'pretty_version' => '2.7.0',
-      'version' => '2.7.0.0',
+      'pretty_version' => '2.7.1',
+      'version' => '2.7.1.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5e04bc5ae5990b17159d79d331055e2c645e5cc5',
+      'reference' => '67dac07c6b4857fbf2bd7a5257a4e1ca8a1c00d0',
     ),
     'laminas/laminas-zendframework-bridge' => 
     array (
-      'pretty_version' => '1.2.0',
-      'version' => '1.2.0.0',
+      'pretty_version' => '1.3.0',
+      'version' => '1.3.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '6cccbddfcfc742eb02158d6137ca5687d92cee32',
+      'reference' => '13af2502d9bb6f7d33be2de4b51fb68c6cdb476e',
     ),
     'mikey179/vfsstream' => 
     array (
@@ -198,12 +198,12 @@
     ),
     'phpunit/phpunit' => 
     array (
-      'pretty_version' => '8.5.16',
-      'version' => '8.5.16.0',
+      'pretty_version' => '8.5.17',
+      'version' => '8.5.17.0',
       'aliases' => 
       array (
       ),
-      'reference' => 'cc66f2fc61296be66c99931a862200e7456b9a01',
+      'reference' => '79067856d85421c56d413bd238d4e2cd6b0e54da',
     ),
     'psr/log' => 
     array (

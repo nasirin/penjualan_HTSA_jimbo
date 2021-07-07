@@ -72,64 +72,7 @@
                 </div>
             </div>
         </div>
-
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title">Gafik Penjualan Bulanan</h5>
-                    </div>
-
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="text-center">
-                                    <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                                </p>
-
-                                <div class="chart">
-                                    <canvas id="salesChart" height="180" style="height: 180px;"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="card-footer">
-                        <div class="row">
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 17%</span>
-                                    <h5 class="description-header">$35,210.43</h5>
-                                    <span class="description-text">TOTAL PENDAPATAN</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-warning"><i class="fas fa-caret-left"></i> 0%</span>
-                                    <h5 class="description-header">123</h5>
-                                    <span class="description-text">TRANSKSI PENDING</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block border-right">
-                                    <span class="description-percentage text-success"><i class="fas fa-caret-up"></i> 20%</span>
-                                    <h5 class="description-header">123</h5>
-                                    <span class="description-text">TRANSAKSI GAGAL</span>
-                                </div>
-                            </div>
-                            <div class="col-sm-3 col-6">
-                                <div class="description-block">
-                                    <span class="description-percentage text-danger"><i class="fas fa-caret-down"></i> 18%</span>
-                                    <h5 class="description-header">1200</h5>
-                                    <span class="description-text">TRANSAKSI SUKSES</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        
         <div class="row">
             <div class="col-12">
                 <!-- TABLE: LATEST ORDERS -->

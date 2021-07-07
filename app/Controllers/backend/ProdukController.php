@@ -50,7 +50,6 @@ class ProdukController extends BaseController
 
     public function edit($id)
     {
-
         $data = [
             'title' => 'HTSA | Produk',
             'active' => 'produk',

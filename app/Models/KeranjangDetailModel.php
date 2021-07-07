@@ -111,11 +111,11 @@ class KeranjangDetailModel extends Model
             ->where('id_pelanggan', session()->get('id'))->countAllResults();
     }
 
-    public function hapus($id)
+    public function hapus($keranjang, $produk)
     {
         $this->db->table($this->table)
-            ->where('id_keranjang', $id)
+            ->where('id_keranjang', $keranjang)
+            ->where('id_produk', $produk)
             ->delete();
-        // ->get()->getResultArray();
     }
 }

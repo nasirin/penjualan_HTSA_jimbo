@@ -64,11 +64,13 @@ class Keranjang extends BaseController
             $this->mdetailkeranjang->simpan($post, $cekpel, $getProduk);
         }
 
-        return redirect()->to('/');
+        return redirect()->to('/cart');
     }
 
     public function hapus($id)
     {
+        $keranjang = $this->mkeranjang->find($id);
+        $this->mdetailkeranjang->hapus($keranjang['id_ker'],$id);
         $this->mkeranjang->delete($id);
         return redirect()->to('/cart');
     }
