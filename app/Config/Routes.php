@@ -58,7 +58,7 @@ $routes->group('user', ['filter' => 'NotLogin'], function ($routes) {
 $routes->group('pesanan', ['filter' => 'NotLogin'], function ($routes) {
 	$routes->get('/', 'backend\PesananController');
 	$routes->get('detail/(:any)', 'backend\PesananController::detail/$1');
-	$routes->get('invoice', 'backend\PesananController::show_invoice');
+	$routes->get('invoice/(:any)', 'backend\PesananController::show_invoice/$1');
 	$routes->get('print', 'backend\PesananController::print');
 });
 
@@ -124,7 +124,7 @@ $routes->post('/profil/ubah/(:any)', 'Profil::ubah/$1');
 // pesanan
 $routes->post('/pesanan/batal/(:any)', 'Pesanan::batal/$1');
 $routes->post('/pesanan/konfirmasi/(:any)', 'Pesanan::konfirmasi/$1');
-$routes->post('/pesanan/invoice/(:any)', 'Pesanan::invoice/$1');
+$routes->get('/pesanan/invoice/pel/(:any)', 'Pesanan::invoice/$1');
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

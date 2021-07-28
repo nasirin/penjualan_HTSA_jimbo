@@ -32,37 +32,33 @@
                                 <i class="fas fa-globe"></i> INVOICE
                                 <!-- <small class="float-right">Date: 2/10/2014</small> -->
                             </h4>
-                        </div>                        
+                        </div>
                     </div>
                     <div class="row invoice-info">
                         <div class="col-sm-4 invoice-col">
                             From
                             <address>
                                 <strong>PT. Anugerah Abadi HTSA</strong><br>
-                                795 Folsom Ave, Suite 600<br>
-                                San Francisco, CA 94107<br>
-                                Phone: (804) 123-5432<br>
-                                Email: info@almasaeedstudio.com
+                                Jl. Untung Suropati No.12, Bambankerep, Kec. Ngaliyan, Kota Semarang<br>
+                                Phone: 0813-2666-8521<br>
                             </address>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
                             To
                             <address>
-                                <strong>John Doe</strong><br>
-                                795 Folsom Ave, Suite 600<br>
-                                San Francisco, CA 94107<br>
-                                Phone: (555) 539-1037<br>
-                                Email: john.doe@example.com
+                                <strong><?= $head['nama'] ?></strong><br>
+                                <?= $head['alamat'] ?><br>
+                                Phone: <?= $head['notelp'] ?><br>
                             </address>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-4 invoice-col">
-                            <b>Invoice #007612</b><br>
-                            <br>                            
-                            <b>Tanggal Pemesanan:</b> 2/22/2014<br>
-                            <b>Account:</b> 968-34567
-                        </div>                        
+                            <b>Invoice #<?= $head['id_pes'] ?></b><br>
+                            <br>
+                            <b>Tanggal Pemesanan:</b> <?= $head['created_at'] ?><br>
+                            <b>Account:</b> <?= $head['id_pelanggan'] ?>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-12 table-responsive">
@@ -70,56 +66,41 @@
                                 <thead>
                                     <tr>
                                         <th>Qty</th>
-                                        <th>Product</th>
-                                        <th>Description</th>
-                                        <th>Subtotal</th>
+                                        <th>Produk</th>
+                                        <th>Harga</th>
+                                        <th>Diskon</th>
+                                        <th>Total</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Call of Duty</td>                                        
-                                        <td>El snort testosterone trophy driving gloves handsome</td>
-                                        <td>$64.50</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Need for Speed IV</td>
-                                        <td>Wes Anderson umami biodiesel</td>
-                                        <td>$50.00</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Monsters DVD</td>                                        
-                                        <td>Terry Richardson helvetica tousled street art master</td>
-                                        <td>$10.70</td>
-                                    </tr>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Grown Ups Blue Ray</td>
-                                        <td>Tousled lomo letterpress</td>
-                                        <td>$25.99</td>
-                                    </tr>
+                                    <?php foreach ($body as $data) : ?>
+                                        <tr>
+                                            <td><?= $data['qty_pesanan'] ?></td>
+                                            <td><?= $data['nama_produk'] ?></td>
+
+                                            <?php if ($data['id_promo']) : ?>
+                                                <td><?= 'Rp ' . number_format($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100), 0, ',', '.') ?></td>
+                                            <?php else : ?>
+                                                <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.')  ?></td>
+                                            <?php endif; ?>
+
+                                            <td><?= $data['potongan'] . '%' ?></td>
+
+                                            <?php if ($data['id_promo']) : ?>
+                                                <td><?= 'Rp ' . number_format($data['qty_pesanan'] * ($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100)), 0, ',', '.') ?></td>
+                                            <?php else : ?>
+                                                <td><?= 'Rp ' . number_format($data['qty_pesanan'] * $data['harga_produk'], 0, ',', '.') ?></td>
+                                            <?php endif; ?>
+                                        </tr>
+                                    <?php endforeach; ?>
                                 </tbody>
                             </table>
                         </div>
-                    </div>                    
+                    </div>
                     <div class="row justify-content-end">
                         <div class="col-6">
                             <div class="table-responsive">
                                 <table class="table">
-                                    <tr>
-                                        <th style="width:50%">Subtotal:</th>
-                                        <td>$250.30</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Tax (9.3%)</th>
-                                        <td>$10.34</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Shipping:</th>
-                                        <td>$5.80</td>
-                                    </tr>
                                     <tr>
                                         <th>Total:</th>
                                         <td>$265.24</td>
@@ -133,7 +114,7 @@
                             <a href="/pesanan/print" target="_blank" class="btn btn-default float-right"><i class="fas fa-print"></i> Print</a>
                         </div>
                     </div>
-                </div>                
+                </div>
             </div>
         </div>
     </div>

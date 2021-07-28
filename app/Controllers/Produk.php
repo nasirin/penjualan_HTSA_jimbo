@@ -67,7 +67,7 @@ class Produk extends BaseController
         $this->pesanan->simpan($post);
         $getLastPesanan = $this->pesanan->getLastPesanan();
         $this->pesananDetail->simpan($getLastPesanan, $post, $total);
-        $this->mdetailkeranjang->hapus($post['idKeranjang']);
+        $this->mdetailkeranjang->hapus($post);
         $this->mkeranjang->hapus();
 
         return view('frontend/pages/checkout');

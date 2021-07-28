@@ -59,39 +59,26 @@ class KeranjangDetailModel extends Model
             ->get()->getRowArray();
     }
 
-    public function simpan($post, $keranjang, $produk)
+    public function simpan($post, $keranjang)
     {
-        $subtotal1 = $produk['harga_produk'] * $post['qty'];
-        $subtotal2 = ($produk['harga_produk'] * $produk['potongan'] / 100) * $post['qty'];
-
         $data['id_produk'] = $post['idProduk'];
         if ($post['promo']) {
             $data['id_promo'] = $post['promo'];
         }
         $data['qty_keranjang'] = $post['qty'];
 
-        if ($post['promo']) {
-            $data['subtotal_keranjang'] = $subtotal2;
-        } else {
-            $data['subtotal_keranjang'] = $subtotal1;
-        }
+        $data['subtotal_keranjang'] = $post['total'];
         $data['id_keranjang'] = $keranjang['id_ker'];
 
         $this->db->table($this->table)->insert($data);
     }
 
-    public function stockin($post, $keranjang, $produk)
+    public function stockin($post, $keranjang)
     {
-        $subtotal1 = $produk['harga_produk'] * $post['qty'];
-        $subtotal2 = ($produk['harga_produk'] * $produk['potongan'] / 100) * $post['qty'];
 
         $data['qty_keranjang'] = $keranjang['qty_keranjang'] + $post['qty'];
 
-        if ($post['promo']) {
-            $data['subtotal_keranjang'] = $subtotal2;
-        } else {
-            $data['subtotal_keranjang'] = $subtotal1;
-        }
+        $data['subtotal_keranjang'] = $post['total'];
 
         $this->db->table($this->table)
             ->where('id_produk', $post['idProduk'])
@@ -101,7 +88,19 @@ class KeranjangDetailModel extends Model
     public function subtotal()
     {
         return $this->db->table($this->table)
-            ->selectSum('subtotal_keranjang')->get()->getRowArray();
+            ->selectSum('subtotal_keranjang')
+            ->join('keranjang', 'keranjang.id_ker = detailkeranjang.id_keranjang', 'left')
+            ->where('id_pelanggan', session('id'))
+            ->get()->getRowArray();
+    }
+
+    public function totalqty()
+    {
+        return $this->db->table($this->table)
+            ->selectSum('qty_keranjang')
+            ->join('keranjang', 'keranjang.id_ker = detailkeranjang.id_keranjang', 'left')
+            ->where('id_pelanggan', session('id'))
+            ->get()->getRowArray();
     }
 
     public function total_keranjang()
@@ -111,11 +110,10 @@ class KeranjangDetailModel extends Model
             ->where('id_pelanggan', session()->get('id'))->countAllResults();
     }
 
-    public function hapus($keranjang, $produk)
+    public function hapus($id)
     {
         $this->db->table($this->table)
-            ->where('id_keranjang', $keranjang)
-            ->where('id_produk', $produk)
+            ->where('id_keranjang', $id)
             ->delete();
     }
 }

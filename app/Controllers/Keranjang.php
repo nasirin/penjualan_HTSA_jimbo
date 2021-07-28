@@ -24,14 +24,14 @@ class Keranjang extends BaseController
         if (session()->get('username') == '') {
             return redirect()->to('/login');
         }
-        // $keranjang = $this->mdetailkeranjang->keranjang(session('id'));
-        // dd($keranjang);
         $data = [
             'keranjang' => $this->mdetailkeranjang->keranjang(session('id')),
             'total' => $this->mdetailkeranjang->total_keranjang(session('id')),
             'total_keranjang' => $this->mdetailkeranjang->total_keranjang(),
-            'subtotal' => $this->mdetailkeranjang->subtotal()
+            'subtotal' => $this->mdetailkeranjang->subtotal(),
+            'qtytotal' => $this->mdetailkeranjang->totalqty(),
         ];
+        // dd($data);
         return view('frontend/pages/cart', $data);
     }
 
@@ -43,6 +43,8 @@ class Keranjang extends BaseController
 
         $post = $this->request->getVar();
 
+        // dd($post);
+
         $cekpel = $this->mkeranjang->cekPel(session('id'));
         $cekproduk = $this->mdetailkeranjang->cekProd($post['idProduk']);
         // dd($cekproduk);
@@ -51,17 +53,16 @@ class Keranjang extends BaseController
         if ($cekpel) {
             if ($cekproduk) {
                 $getProduk = $this->produk->get_data($post['idProduk']);
-                // dd($getProduk);
-                $this->mdetailkeranjang->stockin($post, $cekproduk, $getProduk);
+                $this->mdetailkeranjang->stockin($post, $cekproduk);
             } else {
                 $getProduk = $this->produk->get_data($post['idProduk']);
-                $this->mdetailkeranjang->simpan($post, $cekpel, $getProduk);
+                $this->mdetailkeranjang->simpan($post, $cekpel);
             }
         } else {
             $this->mkeranjang->tambah($post);
             $cekpel = $this->mkeranjang->cekPel(session('id'));
             $getProduk = $this->produk->get_data($post['idProduk']);
-            $this->mdetailkeranjang->simpan($post, $cekpel, $getProduk);
+            $this->mdetailkeranjang->simpan($post, $cekpel);
         }
 
         return redirect()->to('/cart');
@@ -69,9 +70,14 @@ class Keranjang extends BaseController
 
     public function hapus($id)
     {
-        $keranjang = $this->mkeranjang->find($id);
-        $this->mdetailkeranjang->hapus($keranjang['id_ker'],$id);
-        $this->mkeranjang->delete($id);
-        return redirect()->to('/cart');
+        $post = $this->request->getVar();
+        $this->mdetailkeranjang->delete($id);
+        $detailkeranjang = $this->mdetailkeranjang->where('id_keranjang', $post['idker'])->first();        
+        if ($detailkeranjang) {
+            return redirect()->to('/cart');
+        } else {
+            $this->mkeranjang->delete($post['idker']);
+            return redirect()->to('/cart');
+        }
     }
 }

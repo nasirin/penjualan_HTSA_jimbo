@@ -55,12 +55,12 @@
                                 <td><?= $no++; ?></td>
                                 <td><?= $data['id_pes']; ?></td> <!-- INV bulan tahun increment -->
                                 <td><?= ucwords($data['nama']); ?></td>
-                                <td>Rp. <?= number_format($data['total_pesanan'],0,',','.'); ?></td>
+                                <td>Rp. <?= number_format($data['total_pesanan'], 0, ',', '.'); ?></td>
                                 <td><?= $data['status_pesanan']; ?></td>
                                 <td>
                                     <!-- jika status belom di bayar jangan tampilkan print -->
                                     <a href="/pesanan/detail/<?= $data['id_pes']; ?>" class="btn btn-info btn-sm"> <i class="fa fa-eye"></i></a>
-                                    <a href="/pesanan/invoice" class="btn btn-info btn-sm"> <i class="fa fa-file"></i></a>
+                                    <a href="/pesanan/invoice/<?= $data['id_pes'] ?>" class="btn btn-info btn-sm"> <i class="fa fa-file"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

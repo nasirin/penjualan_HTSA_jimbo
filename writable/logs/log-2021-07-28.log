@@ -1,0 +1,34 @@
+CRITICAL - 2021-07-28 10:29:01 --> Illegal string offset 'idKeranjang'
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\KeranjangDetailModel.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\Users\\Bon ca...', 116, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Keranjang.php(74): App\Models\KeranjangDetailModel->hapus('1', '1')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Keranjang->hapus('1')
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Keranjang))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-28 14:20:29 --> Illegal string offset 'idKeranjang'
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Models\KeranjangDetailModel.php(116): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Illegal string ...', 'C:\\Users\\Bon ca...', 116, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Keranjang.php(74): App\Models\KeranjangDetailModel->hapus('1', '1')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Keranjang->hapus('1')
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Keranjang))
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#7 {main}
+CRITICAL - 2021-07-28 14:39:44 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Keranjang.php(77): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 77, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Keranjang->hapus('5')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Keranjang))
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
+CRITICAL - 2021-07-28 14:40:47 --> Trying to access array offset on value of type null
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Keranjang.php(77): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Trying to acces...', 'C:\\Users\\Bon ca...', 77, Array)
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Keranjang->hapus('6')
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Keranjang))
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#6 {main}
