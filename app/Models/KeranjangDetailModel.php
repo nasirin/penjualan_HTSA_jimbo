@@ -78,7 +78,7 @@ class KeranjangDetailModel extends Model
 
         $data['qty_keranjang'] = $keranjang['qty_keranjang'] + $post['qty'];
 
-        $data['subtotal_keranjang'] = $post['total'];
+        $data['subtotal_keranjang'] = $post['total'] + $keranjang['subtotal_keranjang'];
 
         $this->db->table($this->table)
             ->where('id_produk', $post['idProduk'])

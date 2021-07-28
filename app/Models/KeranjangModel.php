@@ -38,7 +38,7 @@ class KeranjangModel extends Model
     {
         $data = [
             'id_pelanggan' => $post['idPel'],
-            'created_at' => date('ymd')
+            // 'created_at' => date('ymd')
         ];
 
         $this->db->table('keranjang')

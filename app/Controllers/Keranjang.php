@@ -42,26 +42,20 @@ class Keranjang extends BaseController
         }
 
         $post = $this->request->getVar();
-
-        // dd($post);
-
         $cekpel = $this->mkeranjang->cekPel(session('id'));
         $cekproduk = $this->mdetailkeranjang->cekProd($post['idProduk']);
-        // dd($cekproduk);
 
+        // dd($cekproduk);
 
         if ($cekpel) {
             if ($cekproduk) {
-                $getProduk = $this->produk->get_data($post['idProduk']);
                 $this->mdetailkeranjang->stockin($post, $cekproduk);
             } else {
-                $getProduk = $this->produk->get_data($post['idProduk']);
                 $this->mdetailkeranjang->simpan($post, $cekpel);
             }
         } else {
             $this->mkeranjang->tambah($post);
             $cekpel = $this->mkeranjang->cekPel(session('id'));
-            $getProduk = $this->produk->get_data($post['idProduk']);
             $this->mdetailkeranjang->simpan($post, $cekpel);
         }
 
@@ -72,7 +66,7 @@ class Keranjang extends BaseController
     {
         $post = $this->request->getVar();
         $this->mdetailkeranjang->delete($id);
-        $detailkeranjang = $this->mdetailkeranjang->where('id_keranjang', $post['idker'])->first();        
+        $detailkeranjang = $this->mdetailkeranjang->where('id_keranjang', $post['idker'])->first();
         if ($detailkeranjang) {
             return redirect()->to('/cart');
         } else {

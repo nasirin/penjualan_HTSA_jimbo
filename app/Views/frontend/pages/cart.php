@@ -25,11 +25,7 @@
                                             <h5><?= ucwords($data['nama_produk']); ?></h5>
                                         </td>
                                         <td class="shoping__cart__price">
-                                            <?php if ($data['id_promo']) : ?>
-                                                Rp. <?= number_format($data['harga_produk'] - $data['harga_produk'] * $data['potongan'] / 100, 0, ',', '.'); ?>
-                                            <?php else : ?>
-                                                Rp. <?= number_format($data['harga_produk'], 0, ',', '.'); ?>
-                                            <?php endif; ?>
+                                            Rp. <?= number_format($data['subtotal_keranjang'], 0, ',', '.'); ?>
                                         </td>
                                         <td class="shoping__cart__quantity">
                                             <?= $data['qty_keranjang']; ?>
