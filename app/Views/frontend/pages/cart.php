@@ -79,7 +79,7 @@
                     <h5>Cart Total</h5>
                     <?php if ($keranjang) : ?>
                         <ul>
-                            <li>Total <span>Rp. <?= number_format($subtotal['subtotal_keranjang'] * $qtytotal['qty_keranjang'], 0, ',', '.'); ?></span></li>
+                            <li>Total <span>Rp. <?= number_format($subtotal['subtotal_keranjang'], 0, ',', '.'); ?></span></li>
                         </ul>
                         <form action="/checkout" method="POST">
                             <?= csrf_field(); ?>

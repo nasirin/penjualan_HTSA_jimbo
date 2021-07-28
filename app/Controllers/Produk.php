@@ -61,13 +61,12 @@ class Produk extends BaseController
     public function checkout()
     {
         $post = $this->request->getVar();
-        // dd($post);
         $total = $this->mdetailkeranjang->total_keranjang(session('id'));
 
         $this->pesanan->simpan($post);
         $getLastPesanan = $this->pesanan->getLastPesanan();
         $this->pesananDetail->simpan($getLastPesanan, $post, $total);
-        $this->mdetailkeranjang->hapus($post);
+        $this->mdetailkeranjang->hapus($post['idKeranjang']);
         $this->mkeranjang->hapus();
 
         return view('frontend/pages/checkout');

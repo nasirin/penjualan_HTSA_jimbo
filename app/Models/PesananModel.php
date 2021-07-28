@@ -79,7 +79,7 @@ class PesananModel extends Model
     {
         $data = [
             'id_pes' => $this->kode(),
-            'id_pelanggan' => session('id'),
+            'id_pelanggan' => $post['idPel'],
             'total_pesanan' => $post['totalBayar'],
             'status_pesanan' => 'pending',
         ];
