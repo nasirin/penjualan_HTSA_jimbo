@@ -41,12 +41,31 @@ class Produk extends BaseController
         return view('frontend/pages/detail', $data);
     }
 
-    public function konfirmasi()
+    public function konfirmasi($id)
     {
         $data = [
             'total_keranjang' => $this->mdetailkeranjang->total_keranjang(),
+            'pesanan' => $this->pesananDetail->getBody($id),
+            'total_pesanan' => $this->pesanan->find($id),
         ];
+        // dd($id);
         return view('frontend/pages/konfirmasi', $data);
+    }
+
+    public function konfirmasiPesanan($id)
+    {
+        // ambil inputan
+        $input = $this->request->getVar();
+        // ambil gambar
+        $gambar = $this->request->getFile('img');
+        $fileGambar = $gambar->getRandomName();
+        $gambar->move('img/konfirmasi/', $fileGambar);
+
+        // dd($gambar);
+
+        $this->pesanan->simpanKonfirmasi($input, $fileGambar,$id);
+        session()->setFlashdata('success', 'Konfirmasi Berhasil');
+        return redirect()->to('/profil');
     }
 
     public function produk()
@@ -68,7 +87,8 @@ class Produk extends BaseController
         $this->pesananDetail->simpan($getLastPesanan, $post, $total);
         $this->mdetailkeranjang->hapus($post['idKeranjang']);
         $this->mkeranjang->hapus();
+        $data['invoice'] = $getLastPesanan['id_pes'];
 
-        return view('frontend/pages/checkout');
+        return view('frontend/pages/checkout', $data);
     }
 }

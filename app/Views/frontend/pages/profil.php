@@ -88,7 +88,7 @@ use App\Database\Migrations\Pelanggan;
                                         <div class="card-footer">
                                             <div class="row justify-content-between">
                                                 <a href="/pesanan/invoice/pel/<?= $pesananHead['id_pesanan'] ?>" target="_blank" class="btn btn-success">Cetak Invoice</a>
-                                                <a href="/pesanan/konfirmasi/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-success">Konfirmasi</a>
+                                                <a href="/konfirmasi/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-success">Konfirmasi</a>
                                                 <a href="/pesanan/batal/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-danger">Batal</a>
                                             </div>
                                         </div>

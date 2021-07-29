@@ -1,8 +1,9 @@
 <?= $this->include('frontend/component/meta'); ?>
 <!-- Page Preloder -->
-<div id="preloder">
+<!-- <div id="preloder">
     <div class="loader"></div>
-</div>
+</div> -->
+
 <div class="humberger__menu__overlay"></div>
 <?= $this->include('frontend/component/topinfomin'); ?>
 

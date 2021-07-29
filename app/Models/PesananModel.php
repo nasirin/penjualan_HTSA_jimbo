@@ -87,6 +87,15 @@ class PesananModel extends Model
         $this->db->table('pesanan')->insert($data);
     }
 
+    public function simpanKonfirmasi($post, $gambar, $id)
+    {
+        $data = [
+            'status_pesanan' => 'menunggu', 'img_pesanan' => $gambar, 'keterangan_pesanan' => $post['note'], 'updated_at' => date('ymd')
+        ];
+
+        $this->db->table('pesanan')->where('id_pes', $id)->update($data);
+    }
+
     public function batal($id)
     {
         $data = ['status_pesanan' => 'batal'];

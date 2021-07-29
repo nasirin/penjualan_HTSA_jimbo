@@ -9,16 +9,17 @@
     <div class="container">
         <div class="checkout__form">
             <h4>Konfirmasi Pembayaran</h4>
-            <form action="#">
+            <form action="#" method="post" enctype="multipart/form-data">
+                <?= csrf_field() ?>
                 <div class="row">
                     <div class="col-lg-8 col-md-6">
                         <div class="checkout__input">
                             <p>Bukti pembayaran<span>*</span></p>
-                            <input type="text" placeholder="Masukan bukti pembayaran">
+                            <input type="file" placeholder="Masukan bukti pembayaran" accept="image/png, image/jpeg" name="img">
                         </div>
                         <div class="checkout__input">
                             <p>Order notes</p>
-                            <textarea name="" id="" cols="100" rows="10"></textarea>
+                            <textarea name="note" id="" cols="100" rows="10"></textarea>
                         </div>
                         <p>Terimakasih atas kepercayaan anda kepada kami.</p>
                     </div>
@@ -27,11 +28,11 @@
                             <h4>Your Order</h4>
                             <div class="checkout__order__products">Products <span>Total</span></div>
                             <ul>
-                                <li>Vegetable’s Package<span>$75.99</span></li>
-                                <li>Fresh Vegetable <span>$151.99</span></li>
-                                <li>Organic Bananas <span>$53.99</span></li>
+                                <?php foreach ($pesanan as $data) : ?>
+                                    <li><?= $data['nama_produk'] ?><span><?= $data['id_promo'] ? 'Rp ' . number_format($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100), 0, ',', '.') : 'Rp' . number_format($data['harga_produk'], 0, ',', '.') ?></span></li>
+                                <?php endforeach; ?>
                             </ul>
-                            <div class="checkout__order__total">Total <span>$750.99</span></div>
+                            <div class="checkout__order__total">Total <span><?= 'Rp ' . number_format($total_pesanan['total_pesanan'], 0, ',', '.') ?></span></div>
                             <button type="submit" class="site-btn">Konfirmasi</button>
                         </div>
                     </div>

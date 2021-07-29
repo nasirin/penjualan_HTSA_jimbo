@@ -103,7 +103,8 @@ $routes->post('/register', 'Auth::register');
 
 // produk
 $routes->get('/detail/(:any)', 'Produk/$1');
-$routes->get('/konfirmasi', 'Produk::konfirmasi');
+$routes->get('/konfirmasi/(:any)', 'Produk::konfirmasi/$1');
+$routes->post('/konfirmasi/(:any)', 'Produk::konfirmasiPesanan/$1');
 $routes->get('/produk', 'Produk::produk');
 $routes->post('/checkout', 'Produk::checkout');
 
@@ -113,9 +114,9 @@ $routes->post('/tambah/(:any)', 'Keranjang::tambah/$1');
 $routes->post('/hapus/(:any)', 'Keranjang::hapus/$1');
 
 // buy now
-$routes->group('buy', function ($routes) {
-	$routes->get('/', 'BuyNowController');
-});
+// $routes->group('buy', function ($routes) {
+// 	$routes->get('/', 'BuyNowController');
+// });
 
 // profil
 $routes->get('/profil', 'Profil');
