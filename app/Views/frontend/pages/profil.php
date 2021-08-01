@@ -52,47 +52,62 @@ use App\Database\Migrations\Pelanggan;
                         <div class="tab-content">
                             <div class="active tab-pane" id="activity">
                                 <?php if ($pesananHead) : ?>
-                                    <div class="card">
-                                        <div class="card-header">
-                                            <div class="row justify-content-between">
-                                                <div class="card-title">
-                                                    <h4><?= $pesananHead['id_pesanan'] ?></h4>
-                                                </div>
-                                                <div>
-                                                    <p><?= $pesananHead['created_at'] ?></p>
+                                    <?php foreach ($pesananHead as $head) : ?>
+                                        <div class="card">
+                                            <div class="card-header">
+                                                <div class="row justify-content-between">
+                                                    <div class="card-title">
+                                                        <h4><?= $head['id_pesanan'] ?></h4>
+                                                    </div>
+                                                    <div>
+                                                        <p><?= $head['created_at'] ?></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card-body">
-                                            <table class="table">
-                                                <thead>
-                                                    <tr>
-                                                        <th>Produk</th>
-                                                        <th>Harga</th>
-                                                        <th>Jumlah</th>
-                                                        <th>Total</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <?php foreach ($pesananBody as $data) : ?>
+                                            <div class="card-body">
+                                                <table class="table">
+                                                    <thead>
                                                         <tr>
-                                                            <td><?= $data['nama_produk'] ?></td>
-                                                            <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
-                                                            <td><?= $data['qty_pesanan'] ?></td>
-                                                            <td><?= 'Rp ' . number_format($data['harga_produk'] * $data['qty_pesanan'], 0, ',', '.') ?></td>
+                                                            <th>Produk</th>
+                                                            <th>Harga</th>
+                                                            <th>Jumlah</th>
+                                                            <th>Total</th>
                                                         </tr>
-                                                    <?php endforeach; ?>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                        <div class="card-footer">
-                                            <div class="row justify-content-between">
-                                                <a href="/pesanan/invoice/pel/<?= $pesananHead['id_pesanan'] ?>" target="_blank" class="btn btn-success">Cetak Invoice</a>
-                                                <a href="/konfirmasi/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-success">Konfirmasi</a>
-                                                <a href="/pesanan/batal/<?= $pesananHead['id_pesanan'] ?>" class="btn btn-danger">Batal</a>
+                                                    </thead>
+                                                    <tbody>
+                                                        <?php foreach ($pesananBody as $data) : ?>
+                                                            <?php if ($total_pesanan <= 1) : ?>
+                                                                <tr>
+                                                                    <td><?= $data['nama_produk'] ?></td>
+                                                                    <td><?= $data['id_promo'] ? 'Rp ' . number_format($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100), 0, ',', '.') : 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
+                                                                    <td><?= $data['qty_pesanan'] ?></td>
+                                                                    <td><?= $data['id_promo'] ? 'Rp ' . number_format($data['qty_pesanan'] * ($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100)), 0, ',', '.') : 'Rp ' . number_format($data['harga_produk'] * $data['qty_pesanan'], 0, ',', '.') ?></td>
+                                                                </tr>
+                                                            <?php else : ?>
+                                                                <?php if ($head['id_pes'] != $data['id_pes']) : ?>
+                                                                    <tr>
+                                                                        <td><?= $data['nama_produk'] ?></td>
+                                                                        <td><?= $data['id_promo'] ? 'Rp ' . number_format($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100), 0, ',', '.') : 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
+                                                                        <td><?= $data['qty_pesanan'] ?></td>
+                                                                        <td><?= $data['id_promo'] ? 'Rp ' . number_format($data['qty_pesanan'] * ($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100)), 0, ',', '.') : 'Rp ' . number_format($data['harga_produk'] * $data['qty_pesanan'], 0, ',', '.') ?></td>
+                                                                    </tr>
+                                                                <?php endif; ?>
+                                                            <?php endif; ?>
+                                                        <?php endforeach; ?>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="row justify-content-between">
+                                                    <a href="/invoice/<?= $head['id_pesanan'] ?>" target="_blank" class="btn btn-success">Cetak Invoice</a>
+                                                    <?php if ($head['status_pesanan'] != 'menunggu') : ?>
+                                                        <a href="/konfirmasi/<?= $head['id_pesanan'] ?>" class="btn btn-success">Konfirmasi</a>
+                                                    <?php endif; ?>
+                                                    <a href="/pesanan/batal/<?= $head['id_pesanan'] ?>" class="btn btn-danger">Batal</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    <?php endforeach; ?>
                                 <?php else : ?>
                                     <div class="card">
                                         <p class="text-center">Anda Belum Memiliki Pesanan Aktif</p>

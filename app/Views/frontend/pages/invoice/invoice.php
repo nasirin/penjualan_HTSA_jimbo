@@ -76,7 +76,7 @@
                                 <th>Produk</th>
                                 <th>Harga</th>
                                 <th>Diskon</th>
-                                <th>Total</th>
+                                <th>Sub Total</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -85,8 +85,8 @@
                                     <td><?= $data['qty_pesanan'] ?></td>
                                     <td><?= $data['nama_produk'] ?></td>
                                     <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
-                                    <td><?= 'Rp ' . number_format($data['harga_produk'], 0, ',', '.') ?></td>
-                                    <td><?= 'Rp ' . number_format($data['qty_pesanan'] * $data['harga_produk'], 0, ',', '.') ?></td>
+                                    <td><?= $data['id_promo'] ? 'Rp ' . number_format($data['harga_produk'] * $data['potongan'] / 100, 0, ',', '.') : '' ?></td>
+                                    <td><?= $data['id_promo'] ? 'Rp ' . number_format($data['qty_pesanan'] * ($data['harga_produk'] - ($data['harga_produk'] * $data['potongan'] / 100)), 0, ',', '.') : 'Rp ' . number_format($data['qty_pesanan'] * $data['harga_produk'], 0, ',', '.') ?></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
@@ -117,16 +117,8 @@
                     <div class="table-responsive">
                         <table class="table">
                             <tr>
-                                <th style="width:50%">Subtotal:</th>
-                                <td>$250.30</td>
-                            </tr>
-                            <tr>
-                                <th>Diskon</th>
-                                <td>$10.34</td>
-                            </tr>
-                            <tr>
                                 <th>Total:</th>
-                                <td>$265.24</td>
+                                <td><?= 'Rp ' . number_format($total['total_pesanan'], 0, ',', '.') ?></td>
                             </tr>
                         </table>
                     </div>

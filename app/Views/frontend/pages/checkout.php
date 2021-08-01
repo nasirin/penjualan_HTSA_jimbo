@@ -25,7 +25,7 @@
     <p style="text-align:center;">Silahkan lakukan pembayaran dan konfirmasi pembayaran anda pada link dibawah ini: <strong>
             <br> <a href="/konfirmasi/<?= $invoice?>">Konfirmasi pembayaran</a></strong>.</p>
     <p style="text-align:center;">Untuk melihat invoice anda bisa kunjungi link di bawah ini: <strong>
-            <br> <a href="/pesanan/invoice/">Invoice</a></strong>.</p>
+            <br> <a href="/profil">Invoice</a></strong>.</p>
     <p style="text-align:center; margin-top:10px;"><strong>
             <br> <a href="/">Kembali belanja</a></strong>.</p>
     <br>

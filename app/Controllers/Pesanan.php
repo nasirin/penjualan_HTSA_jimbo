@@ -29,11 +29,14 @@ class Pesanan extends BaseController
     }
 
     public function invoice($id)
-    {        
+    {
         $data = [
-            'pessananBody' => $this->pesananDetail->getBody(),
-            'pessananHead' => $this->pesananDetail->getHead(),
+            'pessananBody' => $this->pesananDetail->getBody($id),
+            'pessananHead' => $this->pesananDetail->getHead($id),
+            'total' => $this->pesanan->totalPesanan($id)
         ];
+
+        // dd($data);
 
         return view('frontend/pages/invoice/invoice', $data);
     }

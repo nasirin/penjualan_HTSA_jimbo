@@ -27,8 +27,11 @@ class Profil extends BaseController
             'total_keranjang' => $this->mkeranjang->countAllResults(),
             'pelanggan' => $this->pelanggan->find(session('id')),
             'pesananHead' => $this->pesananDetail->getHead(),
-            'pesananBody' => $this->pesananDetail->getBody()
+            'pesananBody' => $this->pesananDetail->getBody(),
+            'total_pesanan' => $this->pesananDetail->totalPesanan()
         ];
+
+        // dd($data);
         return view('frontend/pages/profil', $data);
     }
 

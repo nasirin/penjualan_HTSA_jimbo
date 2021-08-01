@@ -125,7 +125,7 @@ $routes->post('/profil/ubah/(:any)', 'Profil::ubah/$1');
 // pesanan
 $routes->post('/pesanan/batal/(:any)', 'Pesanan::batal/$1');
 $routes->post('/pesanan/konfirmasi/(:any)', 'Pesanan::konfirmasi/$1');
-$routes->get('/pesanan/invoice/pel/(:any)', 'Pesanan::invoice/$1');
+$routes->get('/invoice/(:any)', 'Pesanan::invoice/$1');
 
 if (file_exists(APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php')) {
 	require APPPATH . 'Config/' . ENVIRONMENT . '/Routes.php';

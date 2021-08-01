@@ -27,7 +27,8 @@ class PesananDetailModel extends Model
                 ->join('produk', 'produk.id_prod = pesanan_detail.id_produk', 'left')
                 ->where('pelanggan.id_pel', session('id'))
                 ->where('pesanan.status_pesanan !=', 'batal')
-                ->get()->getRowArray();
+                ->groupBy('id_pes')
+                ->get()->getResultArray();
         }
     }
     public function getBody($id = null)
@@ -45,8 +46,10 @@ class PesananDetailModel extends Model
                 ->join('pesanan', 'pesanan.id_pes = pesanan_detail.id_pesanan', 'left')
                 ->join('pelanggan', 'pelanggan.id_pel = pesanan_detail.id_pelanggan', 'left')
                 ->join('produk', 'produk.id_prod = pesanan_detail.id_produk', 'left')
+                ->join('promo', 'promo.id_promo = pesanan_detail.id_promo', 'left')
                 ->where('pelanggan.id_pel', session('id'))
                 ->where('pesanan.status_pesanan !=', 'batal')
+                // ->groupBy('pesanan.created_at')
                 ->get()->getResultArray();
         }
     }
@@ -73,5 +76,14 @@ class PesananDetailModel extends Model
                 'qty_pesanan' => $post['qty'][$i],
             ]);
         }
+    }
+
+    public function totalPesanan()
+    {
+        return $this->db->table($this->table)
+            ->join('pesanan', 'pesanan.id_pes = pesanan_detail.id_pesanan', 'left')
+            ->where('pesanan_detail.id_pelanggan', session('id'))
+            ->where('pesanan.status_pesanan !=', 'batal')
+            ->countAllResults();
     }
 }

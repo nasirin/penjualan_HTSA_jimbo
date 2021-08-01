@@ -101,4 +101,11 @@ class PesananModel extends Model
         $data = ['status_pesanan' => 'batal'];
         $this->update([$this->primaryKey, $id], $data);
     }
+
+    public function totalPesanan($id)
+    {
+        return $this->db->table($this->table)->selectSum('total_pesanan')
+            ->where('id_pes', $id)
+            ->get()->getRowArray();
+    }
 }
