@@ -1,0 +1,14 @@
+CRITICAL - 2021-08-04 14:07:55 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it.
+
+#0 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Database\BaseConnection.php(625): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Database\BaseBuilder.php(1881): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Model.php(197): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\BaseModel.php(603): CodeIgniter\Model->doFindAll(0, 0)
+#4 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\app\Controllers\Home.php(31): CodeIgniter\BaseModel->findAll()
+#5 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(928): App\Controllers\Home->index()
+#6 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(436): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\CodeIgniter.php(336): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\public\index.php(45): CodeIgniter\CodeIgniter->run()
+#9 C:\Users\Bon cabe\Documents\pesanan\jimbo\TA\app\penjualan_HTSA_jimbo\vendor\codeigniter4\framework\system\Commands\Server\rewrite.php(45): require_once('C:\\Users\\Bon ca...')
+#10 {main}

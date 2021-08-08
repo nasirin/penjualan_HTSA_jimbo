@@ -96,7 +96,7 @@
                         <div class="row col-sm-10 align-items-center">
                             <img src="/img/icon/default.jpg" class="img-thumbnail col-sm-5 col-lg-2 mr-2 mb-2 img-preview" alt="gambar produk">
                             <div class="custom-file col-sm-5 mb-2 ">
-                                <input type="file" class="custom-file-input <?= ($validasi->hasError('gambar')) ? 'is-invalid' : '' ?>" id="gambar" name="gambar">
+                                <input type="file" class="custom-file-input <?= ($validasi->hasError('gambar')) ? 'is-invalid' : '' ?>" id="gambar" name="gambar" required>
                                 <label class="custom-file-label" for="customFile">Gambar produk</label>
                                 <div class="invalid-feedback">
                                     <?= $validasi->getError('gambar') ?>

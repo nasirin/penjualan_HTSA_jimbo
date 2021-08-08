@@ -36,8 +36,6 @@ class Pesanan extends BaseController
             'total' => $this->pesanan->totalPesanan($id)
         ];
 
-        // dd($data);
-
         return view('frontend/pages/invoice/invoice', $data);
     }
 }
