@@ -86,7 +86,7 @@ class ProdukController extends BaseController
             'size' => $valid,
             'keterangan' => $valid,
             'gambar' => [
-                'rules' => 'uploaded[gambar]|max_size[gambar,1025]|mime_in[gambar,image/jpg,image/jpeg]|is_image[gambar]',
+                'rules' => 'uploaded[gambar]|max_size[gambar,1025]|mime_in[gambar,image/jpg,image/jpeg,image/png]|is_image[gambar]',
                 'errors' => [
                     'uploaded' => ' {field} tidak boleh kosong',
                     'max_size' => '{field} Terlalu Besar',
