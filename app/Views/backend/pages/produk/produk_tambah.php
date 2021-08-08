@@ -35,7 +35,7 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-2 col-form-label">Department<small class="text-danger">*</small></label>
                         <div class="col-sm-10">
-                            <select name="department" id="" class="form-control <?= ($validasi->hasError('department')) ? 'is-invalid' : '' ?>">
+                            <select name="department" id="" class="form-control <?= ($validasi->hasError('department')) ? 'is-invalid' : '' ?>" required>
                                 <option value="">--- Pilih Department --- </option>
                                 <?php foreach ($department as $data) : ?>
                                     <option value="<?= $data['id_depart']; ?>"><?= $data["nama_department"]; ?></option>
@@ -49,7 +49,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Nama<small class="text-danger">*</small></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control <?= ($validasi->hasError('nama')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="nama" placeholder="Nama Produk" value="<?= old('nama'); ?>">
+                            <input type="text" class="form-control <?= ($validasi->hasError('nama')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="nama" placeholder="Nama Produk" value="<?= old('nama'); ?>" required>
                             <div class="invalid-feedback">
                                 <?= $validasi->getError('nama') ?>
                             </div>
@@ -58,7 +58,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Varian<small class="text-danger">*</small></label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control <?= ($validasi->hasError('varian')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="varian" placeholder="Varian Produk" value="<?= old('varian'); ?>">
+                            <input type="text" class="form-control <?= ($validasi->hasError('varian')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="varian" placeholder="Varian Produk" value="<?= old('varian'); ?>" required>
                             <div class="invalid-feedback">
                                 <?= $validasi->getError('varian') ?>
                             </div>
@@ -67,7 +67,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Harga<small class="text-danger">*</small></label>
                         <div class="col-sm-10">
-                            <input type="number" min="0" class="form-control <?= ($validasi->hasError('harga')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="harga" placeholder="Harga Produk" value="<?= old('harga'); ?>">
+                            <input type="number" min="0" class="form-control <?= ($validasi->hasError('harga')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="harga" placeholder="Harga Produk" value="<?= old('harga'); ?>" required>
                             <div class="invalid-feedback">
                                 <?= $validasi->getError('harga') ?>
                             </div>
@@ -76,7 +76,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Quantity<small class="text-danger">*</small></label>
                         <div class="col-sm-10">
-                            <input type="number" min="0" class="form-control <?= ($validasi->hasError('qty')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="qty" placeholder="Quantity Produk" value="<?= old('qty'); ?>">
+                            <input type="number" min="0" class="form-control <?= ($validasi->hasError('qty')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="qty" placeholder="Quantity Produk" value="<?= old('qty'); ?>" required>
                             <div class="invalid-feedback">
                                 <?= $validasi->getError('qty') ?>
                             </div>
@@ -85,7 +85,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Size <small class="text-danger">*</small></label>
                         <div class="col-sm-10">
-                            <input type="number" min="0" class="form-control <?= ($validasi->hasError('size')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="size" placeholder="Size Produk" value="<?= old('size'); ?>">
+                            <input type="number" min="0" class="form-control <?= ($validasi->hasError('size')) ? 'is-invalid' : '' ?>" id="inputPassword3" name="size" placeholder="Size Produk" value="<?= old('size'); ?>" required>
                             <div class="invalid-feedback">
                                 <?= $validasi->getError('size') ?>
                             </div>
@@ -107,7 +107,7 @@
                     <div class="form-group row">
                         <label for="inputPassword3" class="col-sm-2 col-form-label">Deskripsi <small class="text-danger">*</small> </label>
                         <div class="col-sm-10">
-                            <textarea name="keterangan" id="keterangan" class="form-control <?= ($validasi->hasError('keterangan')) ? 'is-invalid' : '' ?>" cols="30" rows="10" placeholder="Deskripsi produk"> <?= old('keterangan'); ?></textarea>
+                            <textarea name="keterangan" id="keterangan" class="form-control <?= ($validasi->hasError('keterangan')) ? 'is-invalid' : '' ?>" cols="30" rows="10" placeholder="Deskripsi produk" required> <?= old('keterangan'); ?></textarea>
                             <div class="invalid-feedback">
                                 <?= $validasi->getError('keterangan') ?>
                             </div>
